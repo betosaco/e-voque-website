@@ -486,6 +486,57 @@ export default function BenefitsContent({ locale, dictionary }: BenefitsContentP
                     <div className="mt-8 p-6 bg-white rounded-lg shadow-md animate-fadeIn">
                       <h3 className="text-2xl font-bold text-gray-900 mb-6">{detailedContent[benefit.id as keyof typeof detailedContent].title}</h3>
                       
+                      {/* Image Gallery Placeholders */}
+                      <div className="mb-8">
+                        <h4 className="text-lg font-semibold text-gray-900 mb-4">Image Gallery</h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {/* Image Placeholder 1 */}
+                          <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50 aspect-video flex flex-col items-center justify-center text-center">
+                            <svg className="w-12 h-12 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <p className="text-sm text-gray-600">
+                              {benefit.id === "health" && "Medical professionals providing care in a modern healthcare facility"}
+                              {benefit.id === "retirement" && "Financial advisor discussing retirement options with employee"}
+                              {benefit.id === "professional" && "Employee attending professional training workshop"}
+                              {benefit.id === "wellness" && "Group yoga session in the company wellness center"}
+                              {benefit.id === "remote" && "Employee working productively at MatMax Cowork in Miraflores"}
+                            </p>
+                            <span className="mt-2 text-xs text-gray-500">Image 1 • Future content</span>
+                          </div>
+                          
+                          {/* Image Placeholder 2 */}
+                          <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50 aspect-video flex flex-col items-center justify-center text-center">
+                            <svg className="w-12 h-12 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <p className="text-sm text-gray-600">
+                              {benefit.id === "health" && "Employee using telemedicine services from home computer"}
+                              {benefit.id === "retirement" && "Retirement planning workshop with multiple employees"}
+                              {benefit.id === "professional" && "Employee receiving certification in specialized skills"}
+                              {benefit.id === "wellness" && "Mental health counseling session in private setting"}
+                              {benefit.id === "remote" && "Conference room at the Miraflores location with team meeting"}
+                            </p>
+                            <span className="mt-2 text-xs text-gray-500">Image 2 • Future content</span>
+                          </div>
+                          
+                          {/* Image Placeholder 3 */}
+                          <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 bg-gray-50 aspect-video flex flex-col items-center justify-center text-center">
+                            <svg className="w-12 h-12 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <p className="text-sm text-gray-600">
+                              {benefit.id === "health" && "Family visit to dental office covered by benefits plan"}
+                              {benefit.id === "retirement" && "Digital retirement calculator showing projected savings"}
+                              {benefit.id === "professional" && "Employee presenting at industry conference"}
+                              {benefit.id === "wellness" && "Employee using fitness center with personal trainer"}
+                              {benefit.id === "remote" && "Kitchen and lounge area at MatMax Cowork facility"}
+                            </p>
+                            <span className="mt-2 text-xs text-gray-500">Image 3 • Future content</span>
+                          </div>
+                        </div>
+                      </div>
+                      
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                         {detailedContent[benefit.id as keyof typeof detailedContent].sections.map((section, idx) => (
                           <div key={idx} className="p-4 border border-gray-100 rounded-lg hover:shadow-md transition-shadow">
