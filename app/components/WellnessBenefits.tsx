@@ -105,7 +105,7 @@ export default function WellnessBenefits({ dictionary = {} }: WellnessBenefitsPr
   };
 
   return (
-    <section id="wellness" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="wellness" className="py-20 bg-gradient-to-b from-gray-50 to-white mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}

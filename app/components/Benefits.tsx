@@ -74,7 +74,7 @@ export default function Benefits({ dictionary }: BenefitsProps) {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-primary-50 to-white">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-primary-50 to-white mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}

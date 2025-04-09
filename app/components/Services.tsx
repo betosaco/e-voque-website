@@ -159,7 +159,7 @@ export default function Services({ dictionary }: ServicesProps) {
   };
 
   return (
-    <section id="services" className="py-16 md:py-24">
+    <section id="services" className="py-16 md:py-24 mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
