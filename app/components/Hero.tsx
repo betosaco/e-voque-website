@@ -44,9 +44,9 @@ export default function Hero({ dictionary, locale }: HeroProps) {
       description: dictionary.hero.carousel?.image1?.description || "Connect with certified interpreters in over 100 languages",
       image: "",  // Placeholder for future image
       color: "from-primary-600/80 to-indigo-700/80",
-      placeholderText: "[FUTURE IMAGE 1] Professional interpreters in action during a multilingual conference",
+      placeholderText: "Professional interpreters in action during a multilingual conference",
       icon: (
-        <svg className="w-24 h-24 mx-auto text-primary-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-32 h-32 mx-auto text-primary-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
         </svg>
       )
@@ -56,9 +56,9 @@ export default function Hero({ dictionary, locale }: HeroProps) {
       description: dictionary.hero.carousel?.image2?.description || "Specialized interpreters for healthcare settings",
       image: "",  // Placeholder for future image
       color: "from-blue-600/80 to-blue-800/80",
-      placeholderText: "[FUTURE IMAGE 2] Doctor and patient communicating through an interpreter in a hospital setting",
+      placeholderText: "Doctor and patient communicating through an interpreter in a hospital setting",
       icon: (
-        <svg className="w-24 h-24 mx-auto text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-32 h-32 mx-auto text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
         </svg>
       )
@@ -68,9 +68,9 @@ export default function Hero({ dictionary, locale }: HeroProps) {
       description: dictionary.hero.carousel?.image3?.description || "Accurate interpretation for legal proceedings",
       image: "",  // Placeholder for future image
       color: "from-indigo-600/80 to-purple-700/80",
-      placeholderText: "[FUTURE IMAGE 3] Courtroom setting with interpreter assisting during legal proceedings",
+      placeholderText: "Courtroom setting with interpreter assisting during legal proceedings",
       icon: (
-        <svg className="w-24 h-24 mx-auto text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-32 h-32 mx-auto text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
         </svg>
       )
@@ -214,7 +214,7 @@ export default function Hero({ dictionary, locale }: HeroProps) {
                 >
                   {/* Fallback icon for when image doesn't load */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="opacity-30">
+                    <div className="opacity-40">
                       {image.icon}
                     </div>
                   </div>
@@ -225,11 +225,14 @@ export default function Hero({ dictionary, locale }: HeroProps) {
                   {/* Placeholder text for future images */}
                   {!image.image && image.placeholderText && (
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="font-mono text-white/70 text-sm md:text-base text-center border-2 border-dashed border-white/50 p-4 rounded-lg bg-black/20 backdrop-blur-sm max-w-[85%] shadow-inner">
-                        <div className="bg-white/10 py-1 px-2 rounded mb-2 inline-block">
-                          <span className="text-white/90 font-bold">Placeholder</span>
+                      <div className="font-mono text-white/90 text-sm md:text-base text-center border-4 border-dashed border-white/60 p-6 rounded-lg bg-black/30 backdrop-blur-sm max-w-[85%] shadow-lg">
+                        <div className="bg-white/20 py-2 px-3 rounded-md mb-3 inline-block">
+                          <span className="text-white font-bold text-lg">FUTURE IMAGE</span>
                         </div>
-                        <p>{image.placeholderText}</p>
+                        <p className="text-lg">{image.placeholderText}</p>
+                        <div className="mt-3 bg-white/10 px-3 py-1 rounded-full inline-block">
+                          <span className="text-white/80 text-sm">Image {index + 1} of {carouselImages.length}</span>
+                        </div>
                       </div>
                     </div>
                   )}
