@@ -20,31 +20,26 @@ interface PageContentProps {
  * Properly awaits the params object before accessing its properties
  */
 export default async function Home(props: PageProps) {
-  try {
-    // Await the params object before accessing its properties
-    const params = await props.params;
-    
-    if (!params || typeof params.locale !== 'string') {
-      return notFound();
-    }
-
-    // Safely access locale from params directly
-    const safeLocale = params.locale || 'en';
-    
-    // Validate locale against supported locales
-    if (!locales.includes(safeLocale as Locale)) {
-      return notFound();
-    }
-    
-    // Get dictionary
-    const dictionary = await getDictionary(safeLocale as Locale);
-    
-    // Pass data to the client component
-    return <PageContent locale={safeLocale} dictionary={dictionary} />;
-  } catch (error) {
-    console.error('Error in Home component:', error);
+  // Await the params object before accessing its properties
+  const locale = await props.params.locale;
+  
+  if (!locale || typeof locale !== 'string') {
     return notFound();
   }
+
+  // Safely access locale directly
+  const safeLocale = locale || 'en';
+  
+  // Validate locale against supported locales
+  if (!locales.includes(safeLocale as Locale)) {
+    return notFound();
+  }
+  
+  // Get dictionary
+  const dictionary = await getDictionary(safeLocale as Locale);
+  
+  // Pass data to the client component
+  return <PageContent locale={safeLocale} dictionary={dictionary} />;
 }
 
 // Separate component to avoid direct rendering with params
