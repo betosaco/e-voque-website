@@ -385,10 +385,16 @@ function ApplyContent({ locale, dictionary }: ApplyContentProps) {
                 <div>
                   <button
                     type="submit"
-                    className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-md transition-colors"
+                    className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-md transition-colors mb-3"
                   >
                     Submit Application
                   </button>
+                  <a 
+                    href={`/${locale}/requirements`}
+                    className="w-full block text-center bg-white border border-primary-600 text-primary-600 hover:bg-primary-50 font-medium py-3 px-4 rounded-md transition-colors"
+                  >
+                    Learn About Requirements
+                  </a>
                   <p className="text-xs text-gray-500 mt-2 text-center">
                     By submitting this form, you agree to our terms and privacy policy.
                   </p>
@@ -492,9 +498,9 @@ function ApplyContent({ locale, dictionary }: ApplyContentProps) {
               Submit your application today and join our network of professional interpreters making a difference around the world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-primary-600 hover:bg-primary-50 font-medium py-3 px-8 rounded-md transition-colors">
+              <a href={`/${locale}/requirements`} className="bg-white text-primary-600 hover:bg-primary-50 font-medium py-3 px-8 rounded-md transition-colors">
                 Learn About Requirements
-              </button>
+              </a>
               <button className="bg-primary-700 border border-white hover:bg-primary-800 text-white font-medium py-3 px-8 rounded-md transition-colors">
                 Contact Us
               </button>
