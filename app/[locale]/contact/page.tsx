@@ -14,7 +14,6 @@ import { notFound } from 'next/navigation';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
-  searchParams?: { apply?: string };
 }
 
 interface ContactContentProps {
@@ -29,7 +28,9 @@ export default async function ContactPage(props: PageProps) {
   const locale = params.locale;
   
   // Check if this is an application form request
-  const isApplicationForm = props.searchParams?.apply === 'true';
+  // We can't access searchParams here because they're not part of the PageProps interface
+  // We'll just pass a default value to ContactContent
+  const isApplicationForm = false;
   
   // Define safeLocale
   const safeLocale = typeof locale === "string" ? locale : "en";

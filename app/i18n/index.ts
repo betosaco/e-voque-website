@@ -23,6 +23,22 @@ export interface Dictionary {
     title: string;
     subtitle: string;
     cta: string;
+    applyNow?: string;
+    learnMore?: string;
+    carousel?: {
+      image1: {
+        title: string;
+        description: string;
+      };
+      image2: {
+        title: string;
+        description: string;
+      };
+      image3: {
+        title: string;
+        description: string;
+      };
+    };
   };
   about: {
     title: string;
