@@ -185,7 +185,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
       <div className="w-full mt-4 py-4 bg-gradient-to-r from-purple-600 to-indigo-800 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
         <div className="text-white text-xl font-semibold">Start working with us now!</div>
         <Link
-          href={`/${locale}/contact?apply=true`}
+          href={`/${locale}/apply`}
           className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300 text-base"
         >
           {applyNowText}
@@ -261,7 +261,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 {dictionary.nav.contact}
               </Link>
               <Link
-                href={`/${locale}/contact?apply=true`}
+                href={`/${locale}/apply`}
                 className="block px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg w-full text-center mt-4"
                 onClick={() => setIsOpen(false)}
               >
