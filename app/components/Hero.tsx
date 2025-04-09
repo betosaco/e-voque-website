@@ -204,60 +204,72 @@ export default function Hero({ dictionary, locale }: HeroProps) {
           >
             {/* Enhanced Image Carousel */}
             <div className="aspect-w-4 aspect-h-3 bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg shadow-xl overflow-hidden relative">
-              {/* Carousel slides */}
-              {carouselImages.map((image, index) => (
-                <div 
-                  key={index}
-                  className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                    index === currentImage ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 scale-105'
-                  }`}
-                >
-                  {/* Fallback icon for when image doesn't load */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="opacity-40">
-                      {image.icon}
-                    </div>
-                  </div>
-                  
-                  {/* Background gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-tr ${image.color}`}></div>
-                  
-                  {/* Placeholder text for future images */}
-                  {!image.image && image.placeholderText && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="font-mono text-white/90 text-sm md:text-base text-center border-4 border-dashed border-white/60 p-6 rounded-lg bg-black/30 backdrop-blur-sm max-w-[85%] shadow-lg">
-                        <div className="bg-white/20 py-2 px-3 rounded-md mb-3 inline-block">
-                          <span className="text-white font-bold text-lg">FUTURE IMAGE</span>
-                        </div>
-                        <p className="text-lg">{image.placeholderText}</p>
-                        <div className="mt-3 bg-white/10 px-3 py-1 rounded-full inline-block">
-                          <span className="text-white/80 text-sm">Image {index + 1} of {carouselImages.length}</span>
+              <div className="carousel-container w-full h-full relative">
+                {/* Carousel slides with horizontal movement */}
+                <div className="flex w-full h-full relative">
+                  {carouselImages.map((image, index) => (
+                    <motion.div 
+                      key={index}
+                      className="w-full h-full flex-shrink-0 absolute"
+                      initial={{ x: index === currentImage ? 0 : index < currentImage ? '-100%' : '100%' }}
+                      animate={{ 
+                        x: index === currentImage ? 0 : 
+                           index < currentImage ? '-100%' : '100%',
+                        zIndex: index === currentImage ? 10 : 0
+                      }}
+                      transition={{ 
+                        duration: 0.7,
+                        ease: "easeInOut" 
+                      }}
+                    >
+                      {/* Fallback icon for when image doesn't load */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="opacity-40">
+                          {image.icon}
                         </div>
                       </div>
-                    </div>
-                  )}
-                  
-                  {/* Content */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={index === currentImage ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                      className="text-3xl md:text-4xl font-bold text-white mb-4"
-                    >
-                      {image.title}
+                      
+                      {/* Background gradient */}
+                      <div className={`absolute inset-0 bg-gradient-to-tr ${image.color}`}></div>
+                      
+                      {/* Placeholder text for future images */}
+                      {!image.image && image.placeholderText && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="font-mono text-white/90 text-sm md:text-base text-center border-4 border-dashed border-white/60 p-6 rounded-lg bg-black/30 backdrop-blur-sm max-w-[85%] shadow-lg">
+                            <div className="bg-white/20 py-2 px-3 rounded-md mb-3 inline-block">
+                              <span className="text-white font-bold text-lg">FUTURE IMAGE</span>
+                            </div>
+                            <p className="text-lg">{image.placeholderText}</p>
+                            <div className="mt-3 bg-white/10 px-3 py-1 rounded-full inline-block">
+                              <span className="text-white/80 text-sm">Image {index + 1} of {carouselImages.length}</span>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Content */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10">
+                        <motion.div
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={index === currentImage ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                          transition={{ duration: 0.5, delay: 0.3 }}
+                          className="text-3xl md:text-4xl font-bold text-white mb-4"
+                        >
+                          {image.title}
+                        </motion.div>
+                        <motion.div
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={index === currentImage ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
+                          transition={{ duration: 0.5, delay: 0.4 }}
+                          className="text-lg text-white max-w-md"
+                        >
+                          {image.description}
+                        </motion.div>
+                      </div>
                     </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={index === currentImage ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ duration: 0.5, delay: 0.4 }}
-                      className="text-lg text-white max-w-md"
-                    >
-                      {image.description}
-                    </motion.div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
               
               {/* Carousel navigation buttons */}
               <div className="absolute inset-0 flex items-center justify-between px-4 z-20">
