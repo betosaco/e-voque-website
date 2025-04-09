@@ -22,14 +22,12 @@ const nextConfig = {
     ],
   },
   
-  // Improve build performance
-  swcMinify: true,
+  // Set minification option 
+  // Note: swcMinify is now enabled by default in Next.js 15
   
-  // Help with potential routing issues
-  experimental: {
-    // Ensure proper server components handling
-    serverComponentsExternalPackages: [],
-  },
+  // Configure server component settings
+  // Use serverExternalPackages instead of serverComponentsExternalPackages
+  serverExternalPackages: [],
   
   // Fix for potential route parameter issues
   typescript: {
