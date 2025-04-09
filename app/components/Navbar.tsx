@@ -185,19 +185,19 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
             </button>
           </div>
         </div>
-        
-        {/* Second row with Apply Now button - display in both desktop and mobile */}
-        <div className="flex justify-center mt-4 py-3 bg-gradient-to-r from-purple-600 to-indigo-800">
-          <Link
-            href={`/${locale}/contact?apply=true`}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300 text-base"
-          >
-            {applyNowText}
-            <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </Link>
-        </div>
+      </div>
+      
+      {/* Second row with Apply Now button - full width */}
+      <div className="w-full mt-4 py-4 bg-gradient-to-r from-purple-600 to-indigo-800 flex justify-center">
+        <Link
+          href={`/${locale}/contact?apply=true`}
+          className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300 text-base"
+        >
+          {applyNowText}
+          <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </Link>
       </div>
 
       {/* Mobile menu */}
