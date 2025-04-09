@@ -3,7 +3,7 @@
     "home": "Inicio",
     "about": "Nosotros",
     "services": "Servicios",
-    "wellness": "Bienestar",
+    "wellness": "Beneficios",
     "contact": "Contacto"
   },
   "hero": {
@@ -61,5 +61,66 @@
     "rights": "Todos los derechos reservados",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio"
+  },
+  "employeeBenefits": {
+    "pageTitle": "Beneficios Integrales para Empleados",
+    "pageSubtitle": "Atraiga y retenga el mejor talento con paquetes de beneficios competitivos que incluyen salud, jubilación y soluciones de bienestar.",
+    "overviewTitle": "Mejore la Experiencia de sus Empleados",
+    "overviewDescription": "Nuestros paquetes de beneficios personalizables le ayudan a crear un lugar de trabajo donde los empleados se sienten valorados, apoyados y motivados para dar lo mejor de sí mismos.",
+    "exploreButton": "Explorar Soluciones de Beneficios",
+    "strategicTitle": "Soluciones Estratégicas de Beneficios",
+    "strategicDescription1": "En el competitivo mercado laboral actual, un paquete integral de beneficios es más que una ventaja: es una necesidad estratégica para atraer y retener el mejor talento.",
+    "strategicDescription2": "Nuestras soluciones personalizables de beneficios para empleados le ayudan a crear un lugar de trabajo donde su equipo se siente valorado, apoyado y motivado para dar lo mejor de sí mismo.",
+    "employeesCovered": "Empleados cubiertos",
+    "corporateClients": "Clientes corporativos",
+    "benefitsManagement": "Gestión de Beneficios",
+    "tailoredSolutions": "Soluciones a medida para empresas de todos los tamaños",
+    "solutionsTitle": "Nuestras Soluciones de Beneficios",
+    "health": {
+      "title": "Seguro Médico Integral",
+      "description": "Planes de salud de primer nivel que mantienen protegidos a sus empleados y sus familias con gastos mínimos de bolsillo.",
+      "features": [
+        "Cobertura médica, dental y de visión",
+        "Deducibles y copagos bajos",
+        "Beneficios para medicamentos recetados",
+        "Servicios de telesalud incluidos"
+      ]
+    },
+    "retirement": {
+      "title": "Jubilación y Planificación Financiera",
+      "description": "Ayude a los empleados a asegurar su futuro con planes de jubilación competitivos y recursos de bienestar financiero.",
+      "features": [
+        "401(k) con contribución del empleador",
+        "Recursos de planificación financiera",
+        "Educación sobre inversiones",
+        "Talleres de preparación para la jubilación"
+      ]
+    },
+    "professional": {
+      "title": "Desarrollo Profesional",
+      "description": "Invierta en el crecimiento de sus empleados con beneficios educativos y oportunidades de avance profesional.",
+      "features": [
+        "Reembolso de matrícula",
+        "Apoyo para certificaciones profesionales",
+        "Programas de mentoría",
+        "Estipendios para conferencias y talleres"
+      ]
+    },
+    "wellness": {
+      "title": "Programas de Bienestar",
+      "description": "Capacite a los empleados para llevar una vida más saludable con nuestra plataforma integral de bienestar.",
+      "features": [
+        "Sesiones guiadas de meditación y yoga",
+        "Entrenamiento de aptitud física y flexibilidad",
+        "Recursos de salud mental",
+        "Técnicas de manejo del estrés"
+      ]
+    },
+    "keyFeatures": "Características Principales:",
+    "learnMore": "Saber Más",
+    "ctaTitle": "Mejore los Beneficios de sus Empleados Hoy",
+    "ctaDescription": "Contáctenos para saber cómo nuestras soluciones personalizables de beneficios para empleados, incluidos los programas de bienestar, pueden ayudarle a atraer y retener el mejor talento.",
+    "requestConsultation": "Solicitar una Consulta",
+    "viewPricing": "Ver Precios"
   }
 } 

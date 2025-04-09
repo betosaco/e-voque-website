@@ -4,12 +4,13 @@ import Footer from '../../components/Footer';
 import { notFound } from 'next/navigation';
 
 interface PageProps {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
-export default async function Privacy(props: PageProps) {
-  // Await the params object to get locale safely
-  const { locale: localeParam } = await props.params;
+export default async function PrivacyPage(props: PageProps) {
+  // Await the params object before accessing its properties
+  const params = await props.params;
+  const localeParam = params.locale;
   
   // This is needed since we can't use localeParam directly
   const safeLocale = typeof localeParam === 'string' ? localeParam : 'en';

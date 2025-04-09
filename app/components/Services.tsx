@@ -6,7 +6,10 @@ import {
   BeakerIcon, 
   ScaleIcon, 
   BriefcaseIcon, 
-  ShieldExclamationIcon 
+  ShieldExclamationIcon,
+  PhoneIcon,
+  UserGroupIcon,
+  ClockIcon
 } from '@heroicons/react/24/outline';
 
 interface ServicesProps {
@@ -46,6 +49,8 @@ export default function Services({ dictionary }: ServicesProps) {
       description: dictionary.services.medical.description,
       color: 'from-primary-50 to-indigo-100',
       iconBg: 'bg-primary-100',
+      features: ["24/7 Availability", "Healthcare Specialists", "HIPAA Compliance", "Medical Terminology"],
+      imagePlaceholder: "Image placeholder: Doctor consulting with patient through interpreter",
       image: (
         <div className="h-48 mb-6 bg-gradient-to-r from-primary-200 to-primary-100 rounded-md overflow-hidden relative">
           <div className="absolute inset-0 flex items-center justify-center">
@@ -54,7 +59,7 @@ export default function Services({ dictionary }: ServicesProps) {
             </svg>
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary-500 to-transparent h-12"></div>
-          <div className="absolute bottom-2 left-2 text-white text-xs font-medium bg-primary-600 rounded px-2 py-1">Medical Image</div>
+          <div className="absolute bottom-2 left-2 text-white text-xs font-medium bg-primary-600 rounded px-2 py-1">Medical Interpretation</div>
         </div>
       )
     },
@@ -64,6 +69,8 @@ export default function Services({ dictionary }: ServicesProps) {
       description: dictionary.services.legal.description,
       color: 'from-indigo-50 to-purple-100',
       iconBg: 'bg-indigo-100',
+      features: ["Legal Terminology", "Certified Interpreters", "Court Experience", "Confidentiality"],
+      imagePlaceholder: "Image placeholder: Attorney and client with interpreter in legal meeting",
       image: (
         <div className="h-48 mb-6 bg-gradient-to-r from-indigo-200 to-indigo-100 rounded-md overflow-hidden relative">
           <div className="absolute inset-0 flex items-center justify-center">
@@ -72,7 +79,7 @@ export default function Services({ dictionary }: ServicesProps) {
             </svg>
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-indigo-500 to-transparent h-12"></div>
-          <div className="absolute bottom-2 left-2 text-white text-xs font-medium bg-indigo-600 rounded px-2 py-1">Legal Image</div>
+          <div className="absolute bottom-2 left-2 text-white text-xs font-medium bg-indigo-600 rounded px-2 py-1">Legal Interpretation</div>
         </div>
       )
     },
@@ -82,6 +89,8 @@ export default function Services({ dictionary }: ServicesProps) {
       description: dictionary.services.business.description,
       color: 'from-purple-50 to-pink-100',
       iconBg: 'bg-purple-100',
+      features: ["Business Negotiations", "Marketing Support", "Customer Service", "Contract Discussions"],
+      imagePlaceholder: "Image placeholder: Business meeting with interpreter facilitating international discussion",
       image: (
         <div className="h-48 mb-6 bg-gradient-to-r from-purple-200 to-purple-100 rounded-md overflow-hidden relative">
           <div className="absolute inset-0 flex items-center justify-center">
@@ -90,7 +99,7 @@ export default function Services({ dictionary }: ServicesProps) {
             </svg>
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-purple-500 to-transparent h-12"></div>
-          <div className="absolute bottom-2 left-2 text-white text-xs font-medium bg-purple-600 rounded px-2 py-1">Business Image</div>
+          <div className="absolute bottom-2 left-2 text-white text-xs font-medium bg-purple-600 rounded px-2 py-1">Business Interpretation</div>
         </div>
       )
     },
@@ -100,6 +109,8 @@ export default function Services({ dictionary }: ServicesProps) {
       description: dictionary.services.emergency.description,
       color: 'from-red-50 to-orange-100',
       iconBg: 'bg-red-100',
+      features: ["Immediate Response", "Crisis Training", "Emergency Protocols", "Public Safety Experience"],
+      imagePlaceholder: "Image placeholder: Emergency response with interpreter assisting communication",
       image: (
         <div className="h-48 mb-6 bg-gradient-to-r from-red-200 to-red-100 rounded-md overflow-hidden relative">
           <div className="absolute inset-0 flex items-center justify-center">
@@ -108,10 +119,28 @@ export default function Services({ dictionary }: ServicesProps) {
             </svg>
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-500 to-transparent h-12"></div>
-          <div className="absolute bottom-2 left-2 text-white text-xs font-medium bg-red-600 rounded px-2 py-1">Emergency Image</div>
+          <div className="absolute bottom-2 left-2 text-white text-xs font-medium bg-red-600 rounded px-2 py-1">Emergency Services</div>
         </div>
       )
     },
+  ];
+
+  const processSteps = [
+    {
+      icon: <PhoneIcon className="h-6 w-6 text-white" />,
+      title: "Connect",
+      description: "Call our service and select your preferred language"
+    },
+    {
+      icon: <UserGroupIcon className="h-6 w-6 text-white" />,
+      title: "Match",
+      description: "Get connected with a qualified interpreter instantly"
+    },
+    {
+      icon: <ClockIcon className="h-6 w-6 text-white" />,
+      title: "Communicate",
+      description: "Start your conversation with professional interpretation"
+    }
   ];
 
   const staggerContainer = {
@@ -143,6 +172,40 @@ export default function Services({ dictionary }: ServicesProps) {
             {dictionary.services.title}
           </h2>
           <div className="mt-6 h-1 w-20 bg-primary-600 mx-auto rounded-full"></div>
+          <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+            Our professional interpretation services are available 24/7 across various industries with specialized interpreters for each field.
+          </p>
+        </motion.div>
+
+        {/* How It Works Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mb-16"
+        >
+          <div className="bg-primary-600 rounded-xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-8 text-center">How It Works</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {processSteps.map((step, index) => (
+                <div key={index} className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-full bg-white bg-opacity-20 flex items-center justify-center mb-4 relative">
+                    {step.icon}
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white text-primary-600 font-bold flex items-center justify-center text-sm">
+                      {index + 1}
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-semibold mb-2">{step.title}</h4>
+                  <p className="text-white text-opacity-80">{step.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <div className="inline-block bg-white bg-opacity-10 py-1 px-3 rounded text-sm">
+                Image Placeholder: Visual diagram showing the 3-step process of using our interpretation service
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -166,10 +229,28 @@ export default function Services({ dictionary }: ServicesProps) {
                   {service.title}
                 </h3>
               </div>
-              <p className="text-gray-700">
+              <p className="text-gray-700 mb-4">
                 {service.description}
               </p>
-              <div className="mt-6">
+              
+              {/* Features list */}
+              <div className="mb-4 grid grid-cols-2 gap-2">
+                {service.features.map((feature, i) => (
+                  <div key={i} className="flex items-center text-sm">
+                    <svg className="w-4 h-4 mr-1 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Image placeholder description */}
+              <div className="text-xs text-primary-600 font-medium mb-4 bg-white bg-opacity-50 p-2 rounded">
+                {service.imagePlaceholder}
+              </div>
+              
+              <div className="mt-4">
                 <button className="text-primary-600 font-medium hover:text-primary-700 transition-colors flex items-center">
                   Learn more
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -189,15 +270,31 @@ export default function Services({ dictionary }: ServicesProps) {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full -mr-20 -mt-20"></div>
           <div className="relative z-10">
-            <div className="flex items-center mb-6">
-              <BeakerIcon className="h-12 w-12 mr-4 bg-white bg-opacity-20 text-white p-2 rounded-lg" />
-              <h3 className="text-2xl font-bold">Medical Interpretation Focus</h3>
-            </div>
-            <p className="text-lg mb-6">
-              We specialize in medical interpretation, providing healthcare providers with instant access to qualified medical interpreters who understand medical terminology and protocols.
-            </p>
-            <div className="bg-white text-primary-600 py-2 px-4 rounded-md inline-block font-medium hover:bg-opacity-90 transition-colors cursor-pointer">
-              Learn more about our medical interpretation services
+            <div className="md:flex md:items-center">
+              <div className="md:w-2/3 mb-6 md:mb-0 md:pr-8">
+                <div className="flex items-center mb-6">
+                  <BeakerIcon className="h-12 w-12 mr-4 bg-white bg-opacity-20 text-white p-2 rounded-lg" />
+                  <h3 className="text-2xl font-bold">Medical Interpretation Focus</h3>
+                </div>
+                <p className="text-lg mb-6">
+                  We specialize in medical interpretation, providing healthcare providers with instant access to qualified medical interpreters who understand medical terminology and protocols.
+                </p>
+                <div className="bg-white text-primary-600 py-2 px-4 rounded-md inline-block font-medium hover:bg-opacity-90 transition-colors cursor-pointer">
+                  Learn more about our medical interpretation services
+                </div>
+              </div>
+              <div className="md:w-1/3 bg-white bg-opacity-10 rounded-lg p-4">
+                <div className="text-center">
+                  <div className="mb-3">
+                    <svg className="w-16 h-16 mx-auto text-white opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                    </svg>
+                  </div>
+                  <div className="text-xs opacity-70">
+                    Image Placeholder: Healthcare professional using interpretation service with patient
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

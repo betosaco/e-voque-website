@@ -6,7 +6,7 @@ export function generateStaticParams() {
 }
 
 interface PageProps {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
 // Create an interface for the PageContent component props
@@ -15,26 +15,36 @@ interface PageContentProps {
   dictionary: Dictionary;
 }
 
-// Using React Server Components pattern to avoid direct access to params
+/**
+ * Home page component using Next.js 15 recommended pattern for route parameters
+ * Properly awaits the params object before accessing its properties
+ */
 export default async function Home(props: PageProps) {
-  // Next.js doesn't want us to directly access props.params.locale
-  // So let's pass it through server-side rendering
-  
-  // Await the params object to get locale safely
-  const { locale: localeParam } = await props.params;
-  
-  // This is needed since we can't use localeParam directly
-  const safeLocale = typeof localeParam === 'string' ? localeParam : 'en';
-  
-  // Validate locale
-  if (!locales.includes(safeLocale as Locale)) {
-    notFound();
+  try {
+    // Await the params object before accessing its properties
+    const params = await props.params;
+    
+    if (!params || typeof params.locale !== 'string') {
+      return notFound();
+    }
+
+    // Safely access locale from params directly
+    const safeLocale = params.locale || 'en';
+    
+    // Validate locale against supported locales
+    if (!locales.includes(safeLocale as Locale)) {
+      return notFound();
+    }
+    
+    // Get dictionary
+    const dictionary = await getDictionary(safeLocale as Locale);
+    
+    // Pass data to the client component
+    return <PageContent locale={safeLocale} dictionary={dictionary} />;
+  } catch (error) {
+    console.error('Error in Home component:', error);
+    return notFound();
   }
-  
-  // Get dictionary
-  const dictionary = await getDictionary(safeLocale as Locale);
-  
-  return <PageContent locale={safeLocale} dictionary={dictionary} />;
 }
 
 // Separate component to avoid direct rendering with params
@@ -50,15 +60,25 @@ async function PageContent({ locale, dictionary }: PageContentProps) {
   const Footer = (await import('../components/Footer')).default;
   
   return (
-    <>
+    <main className="overflow-x-hidden">
       <Navbar dictionary={dictionary} locale={locale} />
       <Hero dictionary={dictionary} locale={locale} />
-      <AboutUs dictionary={dictionary} />
-      <Services dictionary={dictionary} />
-      <Benefits dictionary={dictionary} />
-      <WellnessBenefits dictionary={dictionary} />
-      <Contact dictionary={dictionary} />
+      <section id="about">
+        <AboutUs dictionary={dictionary} />
+      </section>
+      <section id="services">
+        <Services dictionary={dictionary} />
+      </section>
+      <section id="benefits">
+        <Benefits dictionary={dictionary} />
+      </section>
+      <section id="wellness">
+        <WellnessBenefits dictionary={dictionary} />
+      </section>
+      <section id="contact">
+        <Contact dictionary={dictionary} />
+      </section>
       <Footer dictionary={dictionary} locale={locale} />
-    </>
+    </main>
   );
 } 

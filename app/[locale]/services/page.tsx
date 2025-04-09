@@ -14,7 +14,7 @@ import {
 import { notFound } from 'next/navigation';
 
 interface PageProps {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
 interface ServicesContentProps {
@@ -23,8 +23,11 @@ interface ServicesContentProps {
 }
 
 export default async function ServicesPage(props: PageProps) {
-  // Await the params object to get locale safely
-  const { locale: localeParam } = await props.params;
+  // Await the params object before accessing its properties
+  const params = await props.params;
+  
+  // Get locale from params safely
+  const localeParam = params.locale;
   
   // This is needed since we can't use localeParam directly
   const safeLocale = typeof localeParam === 'string' ? localeParam : 'en';

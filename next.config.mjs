@@ -1,13 +1,40 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // App router uses a different i18n approach
-  // Removing the old i18n config
+  // Next.js 15 recommendation: explicitly disable legacy i18n config when using app router
+  i18n: null,
   
   // Disable ESLint during build
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
+  },
+  
+  // Configure allowed image domains
+  images: {
+    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
+    ],
+  },
+  
+  // Improve build performance
+  swcMinify: true,
+  
+  // Help with potential routing issues
+  experimental: {
+    // Ensure proper server components handling
+    serverComponentsExternalPackages: [],
+  },
+  
+  // Fix for potential route parameter issues
+  typescript: {
+    // Allow dynamic route parameters to be properly typed
+    ignoreBuildErrors: false,
   },
 };
 
