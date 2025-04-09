@@ -37,7 +37,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
         setScrolled(false);
       }
       
-      // Update active section based on scroll position when on homepage
+      // Only track active sections on the homepage
       if (isHomePage) {
         const sections = ['about', 'services', 'benefits', 'wellness', 'contact'];
         
@@ -63,6 +63,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
     setIsOpen(!isOpen);
   };
 
+  // Only scroll to section if explicitly on homepage
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
     
@@ -80,13 +81,24 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
     if (isHomePage && sectionId) {
       return activeSection === sectionId;
     }
-    return pathname === path;
+    // Improved active state detection for inner pages
+    return pathname === path || pathname.startsWith(path + '/');
   };
 
-  const NavLink = ({ href, sectionId, children }: { href: string, sectionId?: string, children: React.ReactNode }) => {
-    const active = isActive(href, sectionId);
+  const NavLink = ({ 
+    pagePath, 
+    sectionId, 
+    children 
+  }: { 
+    pagePath: string, 
+    sectionId?: string, 
+    children: React.ReactNode 
+  }) => {
+    const href = pagePath;
+    const active = isActive(pagePath, sectionId);
     
     const onClick = (e: React.MouseEvent) => {
+      // Only use scroll behavior on homepage
       if (isHomePage && sectionId) {
         e.preventDefault();
         scrollToSection(sectionId);
@@ -130,29 +142,29 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink href={`/${locale}`}>
+            <NavLink pagePath={`/${locale}`}>
               {dictionary.nav.home}
             </NavLink>
             <NavLink 
-              href={isHomePage ? `/${locale}#about` : `/${locale}/about`} 
+              pagePath={`/${locale}/about`} 
               sectionId="about"
             >
               {dictionary.nav.about}
             </NavLink>
             <NavLink 
-              href={isHomePage ? `/${locale}#services` : `/${locale}/services`} 
+              pagePath={`/${locale}/services`} 
               sectionId="services"
             >
               {dictionary.nav.services}
             </NavLink>
             <NavLink 
-              href={isHomePage ? `/${locale}#benefits` : `/${locale}/benefits`} 
+              pagePath={`/${locale}/benefits`} 
               sectionId="benefits"
             >
               {dictionary.nav.wellness}
             </NavLink>
             <NavLink 
-              href={isHomePage ? `/${locale}#contact` : `/${locale}/contact`} 
+              pagePath={`/${locale}/contact`} 
               sectionId="contact"
             >
               {dictionary.nav.contact}
@@ -206,9 +218,9 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 {dictionary.nav.home}
               </Link>
               <Link
-                href={isHomePage ? `/${locale}#about` : `/${locale}/about`}
+                href={`/${locale}/about`}
                 className={`block px-3 py-2 rounded-md ${
-                  isActive(`/${locale}/about`, 'about') 
+                  isActive(`/${locale}/about`) 
                     ? 'bg-primary-50 text-primary-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
@@ -217,9 +229,9 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 {dictionary.nav.about}
               </Link>
               <Link
-                href={isHomePage ? `/${locale}#services` : `/${locale}/services`}
+                href={`/${locale}/services`}
                 className={`block px-3 py-2 rounded-md ${
-                  isActive(`/${locale}/services`, 'services') 
+                  isActive(`/${locale}/services`) 
                     ? 'bg-primary-50 text-primary-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
@@ -228,9 +240,9 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 {dictionary.nav.services}
               </Link>
               <Link
-                href={isHomePage ? `/${locale}#benefits` : `/${locale}/benefits`}
+                href={`/${locale}/benefits`}
                 className={`block px-3 py-2 rounded-md ${
-                  isActive(`/${locale}/benefits`, 'benefits') 
+                  isActive(`/${locale}/benefits`) 
                     ? 'bg-primary-50 text-primary-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
@@ -239,9 +251,9 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 {dictionary.nav.wellness}
               </Link>
               <Link
-                href={isHomePage ? `/${locale}#contact` : `/${locale}/contact`}
+                href={`/${locale}/contact`}
                 className={`block px-3 py-2 rounded-md ${
-                  isActive(`/${locale}/contact`, 'contact') 
+                  isActive(`/${locale}/contact`) 
                     ? 'bg-primary-50 text-primary-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}

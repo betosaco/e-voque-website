@@ -6,7 +6,7 @@ export function generateStaticParams() {
 }
 
 interface PageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 // Create an interface for the PageContent component props
@@ -21,7 +21,8 @@ interface PageContentProps {
  */
 export default async function Home(props: PageProps) {
   // Await the params object before accessing its properties
-  const locale = await props.params.locale;
+  const params = await props.params;
+  const locale = params.locale;
   
   if (!locale || typeof locale !== 'string') {
     return notFound();

@@ -19,7 +19,7 @@ import {
 import { notFound } from 'next/navigation';
 
 interface PageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 interface BenefitsContentProps {
@@ -29,13 +29,12 @@ interface BenefitsContentProps {
 
 export default async function WellnessPage(props: PageProps) {
   // Await the params object before accessing its properties
-  const locale = await props.params.locale;
+  const params = await props.params;
+  const locale = params.locale;
   
   // Get locale from params
-  const safeLocale = typeof locale === 'string' ? locale : 'en';
   
   // This is needed since we can't use localeParam directly
-  const safeLocale = typeof locale === 'string' ? localeParam : 'en';
   
   // Validate locale
   if (!locales.includes(safeLocale as Locale)) {
