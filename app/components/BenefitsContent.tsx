@@ -196,6 +196,31 @@ export default function BenefitsContent({ locale, dictionary }: BenefitsContentP
         title: "Success Story: Healthcare Provider Improves Productivity",
         content: "A healthcare organization implementing our comprehensive wellness program saw a 19% reduction in sick days and a measurable 12% increase in self-reported productivity scores."
       }
+    },
+    remote: {
+      title: "Remote Office Details",
+      sections: [
+        {
+          subtitle: "MatMax Cowork Location",
+          content: "Premium coworking space located in the heart of Miraflores at Alcanfores 410, providing a professional environment with all amenities needed for productive work."
+        },
+        {
+          subtitle: "Flexible Scheduling",
+          content: "Choose when you want to use the remote office location with no minimum requirements. Work remotely when it suits your schedule and productivity needs."
+        },
+        {
+          subtitle: "Full Office Amenities",
+          content: "Enjoy high-speed internet, meeting rooms, printing services, kitchen facilities, and comfortable ergonomic workspaces designed for focus and collaboration."
+        },
+        {
+          subtitle: "Central Location Benefits",
+          content: "Located near restaurants, cafes, shopping, and public transportation for easy access and convenient lunch or after-work options."
+        }
+      ],
+      caseStudy: {
+        title: "Success Story: Improved Work-Life Balance",
+        content: "Employees utilizing our Miraflores remote office option reported 38% higher job satisfaction and 27% improved productivity by reducing commute times and having access to a professional workspace close to home."
+      }
     }
   };
 
@@ -290,6 +315,33 @@ export default function BenefitsContent({ locale, dictionary }: BenefitsContentP
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-500 to-transparent h-16"></div>
           <div className="absolute bottom-2 left-4 text-white font-medium">{t?.wellness?.title || "Wellness Programs"}</div>
+        </div>
+      )
+    },
+    {
+      id: "remote",
+      icon: <svg className="h-12 w-12 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+      </svg>,
+      title: "Remote Office in Miraflores",
+      description: "Access our premium coworking space at MatMax Cowork in Miraflores when you want to work outside the main office.",
+      benefits: [
+        "Alcanfores 410, Miraflores location",
+        "Flexible access with no minimum hours",
+        "Full office amenities and services",
+        "Central location near restaurants and shops"
+      ],
+      color: "bg-gradient-to-r from-teal-50 to-emerald-50",
+      iconColor: "text-teal-500",
+      image: (
+        <div className="h-64 bg-gradient-to-r from-teal-200 to-teal-100 rounded-md overflow-hidden relative">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <svg className="w-32 h-32 text-teal-400 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-teal-500 to-transparent h-16"></div>
+          <div className="absolute bottom-2 left-4 text-white font-medium">Remote Office in Miraflores</div>
         </div>
       )
     },
