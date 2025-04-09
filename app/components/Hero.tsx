@@ -159,19 +159,6 @@ export default function Hero({ dictionary, locale }: HeroProps) {
               </Link>
             </div>
             
-            {/* Apply Now CTA Button - More prominent, separate from other CTAs */}
-            <div className="mt-8">
-              <Link
-                href={`/${locale}/contact?apply=true`}
-                className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300"
-              >
-                {dictionary.hero.applyNow || "Apply Now"} 
-                <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </Link>
-            </div>
-            
             {/* Feature Badges */}
             <div className="mt-10 grid grid-cols-2 gap-4">
               <div className="bg-primary-50 p-3 rounded-lg flex items-center">

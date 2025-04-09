@@ -16,6 +16,9 @@ interface NavbarProps {
       wellness: string;
       contact: string;
     };
+    hero?: {
+      applyNow?: string;
+    };
   };
   locale: string;
 }
@@ -109,6 +112,9 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
     );
   };
 
+  // Get the "Apply Now" text from dictionary or use a default
+  const applyNowText = dictionary.hero?.applyNow || "Apply Now";
+
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -118,6 +124,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main navigation row */}
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center">
@@ -177,6 +184,19 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
               )}
             </button>
           </div>
+        </div>
+        
+        {/* Second row with Apply Now button - display in both desktop and mobile */}
+        <div className="flex justify-center mt-4">
+          <Link
+            href={`/${locale}/contact?apply=true`}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300 text-base"
+          >
+            {applyNowText}
+            <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </Link>
         </div>
       </div>
 
@@ -251,6 +271,13 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 onClick={() => setIsOpen(false)}
               >
                 {dictionary.nav.contact}
+              </Link>
+              <Link
+                href={`/${locale}/contact?apply=true`}
+                className="block px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg w-full text-center mt-4"
+                onClick={() => setIsOpen(false)}
+              >
+                {applyNowText}
               </Link>
             </div>
           </motion.div>
