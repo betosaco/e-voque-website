@@ -9,7 +9,23 @@
   "hero": {
     "title": "Professional Interpretation Services",
     "subtitle": "Breaking language barriers through high-quality over-the-phone interpretation",
-    "cta": "Get Started"
+    "cta": "Get Started",
+    "applyNow": "Apply Now",
+    "learnMore": "Learn More",
+    "carousel": {
+      "image1": {
+        "title": "Professional Interpretation",
+        "description": "Connect with certified interpreters in over 100 languages"
+      },
+      "image2": {
+        "title": "Medical Interpretation",
+        "description": "Specialized interpreters for healthcare settings"
+      },
+      "image3": {
+        "title": "Legal Interpretation",
+        "description": "Accurate interpretation for legal proceedings"
+      }
+    }
   },
   "about": {
     "title": "About E-Voque",

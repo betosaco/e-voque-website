@@ -10,6 +10,22 @@ interface HeroProps {
       title: string;
       subtitle: string;
       cta: string;
+      applyNow: string;
+      learnMore: string;
+      carousel: {
+        image1: {
+          title: string;
+          description: string;
+        };
+        image2: {
+          title: string;
+          description: string;
+        };
+        image3: {
+          title: string;
+          description: string;
+        };
+      };
     };
   };
   locale: string;
@@ -24,8 +40,8 @@ export default function Hero({ dictionary, locale }: HeroProps) {
   // Carousel images data with real images and fallback handling
   const carouselImages = [
     {
-      title: "Professional Interpretation",
-      description: "Connect with certified interpreters in over 100 languages",
+      title: dictionary.hero.carousel.image1.title,
+      description: dictionary.hero.carousel.image1.description,
       image: "",  // Placeholder for future image
       color: "from-primary-600/80 to-indigo-700/80",
       placeholderText: "[FUTURE IMAGE 1] Professional interpreters in action during a multilingual conference",
@@ -36,8 +52,8 @@ export default function Hero({ dictionary, locale }: HeroProps) {
       )
     },
     {
-      title: "Medical Interpretation",
-      description: "Specialized interpreters for healthcare settings",
+      title: dictionary.hero.carousel.image2.title,
+      description: dictionary.hero.carousel.image2.description,
       image: "",  // Placeholder for future image
       color: "from-blue-600/80 to-blue-800/80",
       placeholderText: "[FUTURE IMAGE 2] Doctor and patient communicating through an interpreter in a hospital setting",
@@ -48,8 +64,8 @@ export default function Hero({ dictionary, locale }: HeroProps) {
       )
     },
     {
-      title: "Legal Interpretation",
-      description: "Accurate interpretation for legal proceedings",
+      title: dictionary.hero.carousel.image3.title,
+      description: dictionary.hero.carousel.image3.description,
       image: "",  // Placeholder for future image
       color: "from-indigo-600/80 to-purple-700/80",
       placeholderText: "[FUTURE IMAGE 3] Courtroom setting with interpreter assisting during legal proceedings",
@@ -71,7 +87,7 @@ export default function Hero({ dictionary, locale }: HeroProps) {
       if (!isAnimating) {
         changeSlide((currentImage + 1) % carouselImages.length);
       }
-    }, 5000); // Change image every 5 seconds (reduced from 6 seconds)
+    }, 5000); // Change image every 5 seconds
   };
 
   // Auto-rotate carousel
@@ -139,7 +155,20 @@ export default function Hero({ dictionary, locale }: HeroProps) {
                 href={`/${locale}/services`}
                 className="btn-secondary text-lg px-6 py-3"
               >
-                Learn More
+                {dictionary.hero.learnMore}
+              </Link>
+            </div>
+            
+            {/* Apply Now CTA Button - More prominent, separate from other CTAs */}
+            <div className="mt-8">
+              <Link
+                href={`/${locale}/contact?apply=true`}
+                className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300"
+              >
+                {dictionary.hero.applyNow} 
+                <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
               </Link>
             </div>
             

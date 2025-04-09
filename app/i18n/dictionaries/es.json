@@ -9,7 +9,23 @@
   "hero": {
     "title": "Servicios Profesionales de Interpretación",
     "subtitle": "Rompiendo barreras lingüísticas a través de interpretación telefónica de alta calidad",
-    "cta": "Comenzar"
+    "cta": "Comenzar",
+    "applyNow": "Aplicar Ahora",
+    "learnMore": "Saber Más",
+    "carousel": {
+      "image1": {
+        "title": "Interpretación Profesional",
+        "description": "Conéctese con intérpretes certificados en más de 100 idiomas"
+      },
+      "image2": {
+        "title": "Interpretación Médica",
+        "description": "Intérpretes especializados para entornos sanitarios"
+      },
+      "image3": {
+        "title": "Interpretación Legal",
+        "description": "Interpretación precisa para procedimientos legales"
+      }
+    }
   },
   "about": {
     "title": "Sobre E-Voque",

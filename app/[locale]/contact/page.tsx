@@ -14,11 +14,13 @@ import { notFound } from 'next/navigation';
 
 interface PageProps {
   params: Promise<{ locale: string }>;
+  searchParams?: { apply?: string };
 }
 
 interface ContactContentProps {
   locale: string;
   dictionary: Dictionary;
+  isApplicationForm?: boolean;
 }
 
 export default async function ContactPage(props: PageProps) {
@@ -26,11 +28,11 @@ export default async function ContactPage(props: PageProps) {
   const params = await props.params;
   const locale = params.locale;
   
+  // Check if this is an application form request
+  const isApplicationForm = props.searchParams?.apply === 'true';
+  
   // Define safeLocale
   const safeLocale = typeof locale === "string" ? locale : "en";
-  
-  
-  
   
   // Validate locale
   if (!locales.includes(safeLocale as Locale)) {
@@ -40,11 +42,11 @@ export default async function ContactPage(props: PageProps) {
   // Get dictionary
   const dictionary = await getDictionary(safeLocale as Locale);
   
-  return <ContactContent locale={safeLocale} dictionary={dictionary} />;
+  return <ContactContent locale={safeLocale} dictionary={dictionary} isApplicationForm={isApplicationForm} />;
 }
 
 // Separate component to avoid direct rendering with params
-async function ContactContent({ locale, dictionary }: ContactContentProps) {
+async function ContactContent({ locale, dictionary, isApplicationForm }: ContactContentProps) {
   // Contact information
   const contactInfo = [
     {
@@ -104,9 +106,13 @@ async function ContactContent({ locale, dictionary }: ContactContentProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero section */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {isApplicationForm ? 'Apply to Join Our Team' : 'Contact Us'}
+            </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Have questions about our interpretation services? We&apos;re here to help.
+              {isApplicationForm 
+                ? 'Are you a qualified interpreter looking to join our network? Apply below to get started.'
+                : 'Have questions about our interpretation services? We\'re here to help.'}
             </p>
           </div>
           
@@ -114,24 +120,78 @@ async function ContactContent({ locale, dictionary }: ContactContentProps) {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-20">
             {/* Contact Information */}
             <div className="lg:col-span-2 bg-primary-50 rounded-xl p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                {isApplicationForm ? 'Why Join E-Voque' : 'Get in Touch'}
+              </h2>
               
-              <div className="space-y-6">
-                {contactInfo.map((item, index) => (
-                  <div key={index} className="flex items-start">
+              {isApplicationForm ? (
+                <div className="space-y-6">
+                  <div className="flex items-start">
                     <div className="flex-shrink-0 bg-white p-3 rounded-full mr-4">
-                      {item.icon}
+                      <svg className="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="text-lg font-medium text-gray-900">{item.title}</h4>
-                      <p className="text-gray-600 mb-1">{item.info}</p>
-                      <a href={item.href} className="text-primary-600 hover:text-primary-700 text-sm font-medium">
-                        {item.action} →
-                      </a>
+                      <h4 className="text-lg font-medium text-gray-900">Competitive Pay</h4>
+                      <p className="text-gray-600 mb-1">Earn competitive rates based on your qualifications and language pair</p>
                     </div>
                   </div>
-                ))}
-              </div>
+                  
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 bg-white p-3 rounded-full mr-4">
+                      <svg className="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-medium text-gray-900">Flexible Hours</h4>
+                      <p className="text-gray-600 mb-1">Work on your own schedule, full-time or part-time as needed</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 bg-white p-3 rounded-full mr-4">
+                      <svg className="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-medium text-gray-900">Remote Work</h4>
+                      <p className="text-gray-600 mb-1">Work from anywhere with a reliable internet connection</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 bg-white p-3 rounded-full mr-4">
+                      <svg className="h-6 w-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-medium text-gray-900">Professional Development</h4>
+                      <p className="text-gray-600 mb-1">Access to training and certification opportunities</p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-6">
+                  {contactInfo.map((item, index) => (
+                    <div key={index} className="flex items-start">
+                      <div className="flex-shrink-0 bg-white p-3 rounded-full mr-4">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-medium text-gray-900">{item.title}</h4>
+                        <p className="text-gray-600 mb-1">{item.info}</p>
+                        <a href={item.href} className="text-primary-600 hover:text-primary-700 text-sm font-medium">
+                          {item.action} →
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
               
               {/* Social Media Placeholder */}
               <div className="mt-8">
@@ -165,10 +225,12 @@ async function ContactContent({ locale, dictionary }: ContactContentProps) {
               </div>
             </div>
             
-            {/* Contact Form */}
+            {/* Contact/Application Form */}
             <div className="lg:col-span-3">
               <div className="bg-white p-8 rounded-xl shadow-md">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  {isApplicationForm ? 'Interpreter Application' : 'Send Us a Message'}
+                </h2>
                 
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -199,38 +261,156 @@ async function ContactContent({ locale, dictionary }: ContactContentProps) {
                     </div>
                   </div>
                   
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-600 focus:border-transparent"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      {dictionary.contact.form.message}
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-600 focus:border-transparent"
-                      required
-                    ></textarea>
-                  </div>
+                  {isApplicationForm ? (
+                    <>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                            Phone Number
+                          </label>
+                          <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                            required
+                          />
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">
+                            Location
+                          </label>
+                          <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                            required
+                          />
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="languages" className="block text-sm font-medium text-gray-700 mb-1">
+                          Languages (fluent in)
+                        </label>
+                        <input
+                          type="text"
+                          id="languages"
+                          name="languages"
+                          placeholder="e.g., English, Spanish, Mandarin"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                          required
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="experience" className="block text-sm font-medium text-gray-700 mb-1">
+                          Years of Experience
+                        </label>
+                        <select
+                          id="experience"
+                          name="experience"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                          required
+                        >
+                          <option value="">Select experience</option>
+                          <option value="0-1">Less than 1 year</option>
+                          <option value="1-3">1-3 years</option>
+                          <option value="3-5">3-5 years</option>
+                          <option value="5-10">5-10 years</option>
+                          <option value="10+">10+ years</option>
+                        </select>
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="specialization" className="block text-sm font-medium text-gray-700 mb-1">
+                          Specialization Areas
+                        </label>
+                        <div className="grid grid-cols-2 gap-3">
+                          <div className="flex items-center">
+                            <input type="checkbox" id="medical" name="specialization[]" value="medical" className="h-4 w-4 text-primary-600 focus:ring-primary-500" />
+                            <label htmlFor="medical" className="ml-2 text-sm text-gray-700">Medical</label>
+                          </div>
+                          <div className="flex items-center">
+                            <input type="checkbox" id="legal" name="specialization[]" value="legal" className="h-4 w-4 text-primary-600 focus:ring-primary-500" />
+                            <label htmlFor="legal" className="ml-2 text-sm text-gray-700">Legal</label>
+                          </div>
+                          <div className="flex items-center">
+                            <input type="checkbox" id="business" name="specialization[]" value="business" className="h-4 w-4 text-primary-600 focus:ring-primary-500" />
+                            <label htmlFor="business" className="ml-2 text-sm text-gray-700">Business</label>
+                          </div>
+                          <div className="flex items-center">
+                            <input type="checkbox" id="technical" name="specialization[]" value="technical" className="h-4 w-4 text-primary-600 focus:ring-primary-500" />
+                            <label htmlFor="technical" className="ml-2 text-sm text-gray-700">Technical</label>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="education" className="block text-sm font-medium text-gray-700 mb-1">
+                          Education and Certifications
+                        </label>
+                        <textarea
+                          id="education"
+                          name="education"
+                          rows={3}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                          required
+                        ></textarea>
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="resume" className="block text-sm font-medium text-gray-700 mb-1">
+                          Resume/CV
+                        </label>
+                        <input
+                          type="file"
+                          id="resume"
+                          name="resume"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                          required
+                        />
+                        <p className="mt-1 text-xs text-gray-500">PDF or Word document only (5MB max)</p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div>
+                        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                          Subject
+                        </label>
+                        <input
+                          type="text"
+                          id="subject"
+                          name="subject"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                          required
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                          {dictionary.contact.form.message}
+                        </label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          rows={5}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                          required
+                        ></textarea>
+                      </div>
+                    </>
+                  )}
                   
                   <div>
                     <button
                       type="submit"
                       className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-md transition-colors"
                     >
-                      {dictionary.contact.form.submit}
+                      {isApplicationForm ? 'Submit Application' : dictionary.contact.form.submit}
                     </button>
                   </div>
                 </form>
@@ -238,75 +418,84 @@ async function ContactContent({ locale, dictionary }: ContactContentProps) {
             </div>
           </div>
           
-          {/* Map Placeholder */}
-          <div className="mb-20 relative h-96 bg-gray-100 rounded-xl overflow-hidden">
-            <div className="absolute inset-0 opacity-30">
-              <div className="grid grid-cols-10 grid-rows-6 w-full h-full">
-                {Array.from({ length: 60 }).map((_, i) => (
-                  <div key={i} className="border border-gray-200"></div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center z-10">
-                <MapPinIcon className="h-16 w-16 text-primary-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900">Our Location</h3>
-                <p className="text-gray-600">123 Interpretation St, San Francisco, CA 94105</p>
-              </div>
-            </div>
-            
-            {/* Map features */}
-            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-gray-400 rounded-full"></div>
-            <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-gray-400 rounded-full"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-gray-400 rounded-full"></div>
-            
-            {/* Roads */}
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-300"></div>
-            <div className="absolute left-1/3 top-0 bottom-0 w-0.5 bg-gray-300"></div>
-            <div className="absolute left-2/3 top-0 bottom-0 w-0.5 bg-gray-300"></div>
-            
-            {/* Map marker */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-              <div className="h-6 w-6 bg-primary-600 rounded-full flex items-center justify-center animate-pulse">
-                <div className="h-3 w-3 bg-white rounded-full"></div>
-              </div>
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-8 border-t-primary-600 border-l-transparent border-r-transparent"></div>
-            </div>
-            
-            <div className="absolute bottom-2 right-2 bg-white py-1 px-2 rounded text-xs text-gray-600 font-medium shadow-sm z-20">
-              Map placeholder - Will be replaced with Google Maps
-            </div>
-          </div>
-          
-          {/* FAQ Section */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Frequently Asked Questions</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {faqItems.map((item, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.question}</h3>
-                  <p className="text-gray-600">{item.answer}</p>
+          {/* Only show map and FAQ sections on contact page, not application page */}
+          {!isApplicationForm && (
+            <>
+              {/* Map Placeholder */}
+              <div className="mb-20 relative h-96 bg-gray-100 rounded-xl overflow-hidden">
+                <div className="absolute inset-0 opacity-30">
+                  <div className="grid grid-cols-10 grid-rows-6 w-full h-full">
+                    {Array.from({ length: 60 }).map((_, i) => (
+                      <div key={i} className="border border-gray-200"></div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-            
-            <div className="mt-8 text-center">
-              <p className="text-lg text-gray-700 mb-4">Still have questions?</p>
-              <a href="#" className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-md transition-colors">
-                Contact our support team
-              </a>
-            </div>
-          </div>
+                
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center z-10">
+                    <MapPinIcon className="h-16 w-16 text-primary-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-gray-900">Our Location</h3>
+                    <p className="text-gray-600">123 Interpretation St, San Francisco, CA 94105</p>
+                  </div>
+                </div>
+                
+                {/* Map features */}
+                <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-gray-400 rounded-full"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-gray-400 rounded-full"></div>
+                
+                {/* Roads */}
+                <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-300"></div>
+                <div className="absolute left-1/3 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                <div className="absolute left-2/3 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                
+                {/* Map marker */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                  <div className="h-6 w-6 bg-primary-600 rounded-full flex items-center justify-center animate-pulse">
+                    <div className="h-3 w-3 bg-white rounded-full"></div>
+                  </div>
+                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-8 border-t-primary-600 border-l-transparent border-r-transparent"></div>
+                </div>
+                
+                <div className="absolute bottom-2 right-2 bg-white py-1 px-2 rounded text-xs text-gray-600 font-medium shadow-sm z-20">
+                  Map placeholder - Will be replaced with Google Maps
+                </div>
+              </div>
+              
+              {/* FAQ Section */}
+              <div className="mb-20">
+                <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">Frequently Asked Questions</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {faqItems.map((item, index) => (
+                    <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{item.question}</h3>
+                      <p className="text-gray-600">{item.answer}</p>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="mt-8 text-center">
+                  <p className="text-lg text-gray-700 mb-4">Still have questions?</p>
+                  <a href="#" className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-md transition-colors">
+                    Contact our support team
+                  </a>
+                </div>
+              </div>
+            </>
+          )}
           
           {/* Global Support */}
           <div className="bg-primary-50 p-10 rounded-xl mb-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Global Support Network</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  {isApplicationForm ? 'Join Our Global Network' : 'Global Support Network'}
+                </h2>
                 <p className="text-lg text-gray-700 mb-6">
-                  Our support team is available across multiple time zones to ensure you always have access to interpretation services when you need them.
+                  {isApplicationForm 
+                    ? 'Become part of our diverse team of professional interpreters serving clients worldwide. We provide the platform, tools, and support you need to succeed.'
+                    : 'Our support team is available across multiple time zones to ensure you always have access to interpretation services when you need them.'}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center">
@@ -353,16 +542,20 @@ async function ContactContent({ locale, dictionary }: ContactContentProps) {
           
           {/* CTA Section */}
           <div className="bg-primary-600 text-white p-10 rounded-xl text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              {isApplicationForm ? 'Ready to Start Your Journey?' : 'Ready to Get Started?'}
+            </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Contact us today to learn more about our interpretation services and how we can help break down language barriers for your organization.
+              {isApplicationForm
+                ? 'Submit your application today and join our network of professional interpreters making a difference around the world.'
+                : 'Contact us today to learn more about our interpretation services and how we can help break down language barriers for your organization.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-primary-600 hover:bg-primary-50 font-medium py-3 px-8 rounded-md transition-colors">
-                Schedule a Demo
+                {isApplicationForm ? 'Learn About Requirements' : 'Schedule a Demo'}
               </button>
               <button className="bg-primary-700 border border-white hover:bg-primary-800 text-white font-medium py-3 px-8 rounded-md transition-colors">
-                Call Us Now
+                {isApplicationForm ? 'Submit Application' : 'Call Us Now'}
               </button>
             </div>
           </div>
