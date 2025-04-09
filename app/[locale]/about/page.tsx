@@ -39,7 +39,7 @@ async function AboutUsContent({ locale, dictionary }: AboutUsContentProps) {
   return (
     <>
       <Navbar dictionary={dictionary} locale={locale} />
-      <div className="pt-36 pb-16 md:pt-44 md:pb-24">
+      <div className="pt-40 pb-16 md:pt-48 lg:pt-52 md:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About E-Voque</h1>
           <p className="text-xl text-gray-600 mb-16 max-w-3xl">
