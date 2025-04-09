@@ -64,17 +64,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
   };
 
   // Only scroll to section if explicitly on homepage
-  const scrollToSection = (sectionId: string) => {
-    setIsOpen(false);
-    
-    if (isHomePage) {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-        setActiveSection(sectionId);
-      }
-    }
-  };
+  // This function is no longer used since we're always navigating to inner pages
   
   // Helper to check if a navbar item is active
   const isActive = (path: string, sectionId?: string): boolean => {
@@ -97,14 +87,8 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
     const href = pagePath;
     const active = isActive(pagePath, sectionId);
     
-    const onClick = (e: React.MouseEvent) => {
-      // Only use scroll behavior on homepage
-      if (isHomePage && sectionId) {
-        e.preventDefault();
-        scrollToSection(sectionId);
-      } else {
-        setIsOpen(false);
-      }
+    const onClick = () => {
+      setIsOpen(false);
     };
 
     return (
@@ -224,7 +208,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                     ? 'bg-primary-50 text-primary-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
-                onClick={() => isHomePage ? scrollToSection('about') : setIsOpen(false)}
+                onClick={() => setIsOpen(false)}
               >
                 {dictionary.nav.about}
               </Link>
@@ -235,7 +219,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                     ? 'bg-primary-50 text-primary-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
-                onClick={() => isHomePage ? scrollToSection('services') : setIsOpen(false)}
+                onClick={() => setIsOpen(false)}
               >
                 {dictionary.nav.services}
               </Link>
@@ -246,7 +230,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                     ? 'bg-primary-50 text-primary-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
-                onClick={() => isHomePage ? scrollToSection('benefits') : setIsOpen(false)}
+                onClick={() => setIsOpen(false)}
               >
                 {dictionary.nav.wellness}
               </Link>
@@ -257,7 +241,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                     ? 'bg-primary-50 text-primary-600 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
-                onClick={() => isHomePage ? scrollToSection('contact') : setIsOpen(false)}
+                onClick={() => setIsOpen(false)}
               >
                 {dictionary.nav.contact}
               </Link>
