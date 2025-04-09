@@ -25,9 +25,8 @@ export default async function BenefitsPage(props: PageProps) {
   const params = await props.params;
   const locale = params.locale;
   
-  // Get locale from params
-  
-  // This is needed since we can't use localeParam directly
+  // Define safeLocale
+  const safeLocale = typeof locale === 'string' ? locale : 'en';
   
   // Validate locale
   if (!locales.includes(safeLocale as Locale)) {
@@ -111,9 +110,14 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
     {
       id: "health",
       icon: <ShieldCheckIcon className="h-12 w-12 text-blue-500" />,
-      title: t.health.title,
-      description: t.health.description,
-      benefits: t.health.features,
+      title: t?.health?.title || "Comprehensive Health Insurance",
+      description: t?.health?.description || "Top-tier health plans that keep your employees and their families protected with minimal out-of-pocket expenses.",
+      benefits: t?.health?.features || [
+        "Medical, dental, and vision coverage",
+        "Low deductibles and copays",
+        "Prescription drug benefits",
+        "Telehealth services included"
+      ],
       color: "bg-gradient-to-r from-blue-50 to-indigo-50",
       iconColor: "text-blue-500",
       image: (
@@ -122,16 +126,21 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
             <ShieldCheckIcon className="w-32 h-32 text-blue-400 opacity-50" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-500 to-transparent h-16"></div>
-          <div className="absolute bottom-2 left-4 text-white font-medium">{t.health.title}</div>
+          <div className="absolute bottom-2 left-4 text-white font-medium">{t?.health?.title || "Comprehensive Health Insurance"}</div>
         </div>
       )
     },
     {
       id: "retirement",
       icon: <CurrencyDollarIcon className="h-12 w-12 text-green-500" />,
-      title: t.retirement.title,
-      description: t.retirement.description,
-      benefits: t.retirement.features,
+      title: t?.retirement?.title || "Retirement & Financial Planning",
+      description: t?.retirement?.description || "Help employees secure their future with competitive retirement plans and financial wellness resources.",
+      benefits: t?.retirement?.features || [
+        "401(k) with employer matching",
+        "Financial planning resources",
+        "Investment education",
+        "Retirement readiness workshops"
+      ],
       color: "bg-gradient-to-r from-green-50 to-emerald-50",
       iconColor: "text-green-500",
       image: (
@@ -140,16 +149,21 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
             <CurrencyDollarIcon className="w-32 h-32 text-green-400 opacity-50" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-500 to-transparent h-16"></div>
-          <div className="absolute bottom-2 left-4 text-white font-medium">{t.retirement.title}</div>
+          <div className="absolute bottom-2 left-4 text-white font-medium">{t?.retirement?.title || "Retirement & Financial Planning"}</div>
         </div>
       )
     },
     {
       id: "professional",
       icon: <AcademicCapIcon className="h-12 w-12 text-purple-500" />,
-      title: t.professional.title,
-      description: t.professional.description,
-      benefits: t.professional.features,
+      title: t?.professional?.title || "Professional Development",
+      description: t?.professional?.description || "Invest in your employees' growth with education benefits and career advancement opportunities.",
+      benefits: t?.professional?.features || [
+        "Tuition reimbursement",
+        "Professional certification support",
+        "Mentorship programs",
+        "Conference and workshop stipends"
+      ],
       color: "bg-gradient-to-r from-purple-50 to-pink-50",
       iconColor: "text-purple-500",
       image: (
@@ -158,16 +172,21 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
             <AcademicCapIcon className="w-32 h-32 text-purple-400 opacity-50" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-purple-500 to-transparent h-16"></div>
-          <div className="absolute bottom-2 left-4 text-white font-medium">{t.professional.title}</div>
+          <div className="absolute bottom-2 left-4 text-white font-medium">{t?.professional?.title || "Professional Development"}</div>
         </div>
       )
     },
     {
       id: "wellness",
       icon: <HeartIcon className="h-12 w-12 text-red-500" />,
-      title: t.wellness.title,
-      description: t.wellness.description,
-      benefits: t.wellness.features,
+      title: t?.wellness?.title || "Wellness Programs",
+      description: t?.wellness?.description || "Empower employees to lead healthier lives with our comprehensive wellness platform.",
+      benefits: t?.wellness?.features || [
+        "Guided meditation and yoga sessions",
+        "Fitness and flexibility training",
+        "Mental health resources",
+        "Stress management techniques"
+      ],
       color: "bg-gradient-to-r from-red-50 to-orange-50",
       iconColor: "text-red-500",
       image: (
@@ -176,7 +195,7 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
             <HeartIcon className="w-32 h-32 text-red-400 opacity-50" />
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-500 to-transparent h-16"></div>
-          <div className="absolute bottom-2 left-4 text-white font-medium">{t.wellness.title}</div>
+          <div className="absolute bottom-2 left-4 text-white font-medium">{t?.wellness?.title || "Wellness Programs"}</div>
         </div>
       )
     },
@@ -192,9 +211,9 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
             <div className="inline-flex mb-6">
               <BriefcaseIcon className="h-16 w-16 text-primary-600" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t.pageTitle}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t?.pageTitle || "Comprehensive Employee Benefits"}</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t.pageSubtitle}
+              {t?.pageSubtitle || "Attract and retain top talent with competitive benefits packages that include health, retirement, and wellness solutions."}
             </p>
           </div>
           
@@ -214,12 +233,12 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
             </div>
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
               <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg max-w-2xl">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">{t.overviewTitle}</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">{t?.overviewTitle || "Enhance Your Employee Experience"}</h2>
                 <p className="text-lg text-gray-700 mb-6">
-                  {t.overviewDescription}
+                  {t?.overviewDescription || "Our customizable benefits packages help you create a workplace where employees feel valued, supported, and motivated to perform at their best."}
                 </p>
                 <button className="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-md transition-colors">
-                  {t.exploreButton}
+                  {t?.exploreButton || "Explore Benefits Solutions"}
                 </button>
               </div>
             </div>
@@ -229,12 +248,12 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
           <div className="mb-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.strategicTitle}</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">{t?.strategicTitle || "Strategic Benefits Solutions"}</h2>
                 <p className="text-lg text-gray-700 mb-6">
-                  {t.strategicDescription1}
+                  {t?.strategicDescription1 || "In today's competitive job market, a comprehensive benefits package is more than just a perk—it's a strategic necessity for attracting and retaining top talent."}
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
-                  {t.strategicDescription2}
+                  {t?.strategicDescription2 || "Our customizable employee benefits solutions help you create a workplace where your team feels valued, supported, and motivated to perform at their best."}
                 </p>
                 <div className="flex items-center space-x-4">
                   <div className="h-12 w-12 rounded-full bg-primary-100 flex items-center justify-center">
@@ -242,14 +261,14 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
                   </div>
                   <div>
                     <div className="font-medium">250,000+</div>
-                    <div className="text-sm text-gray-500">{t.employeesCovered}</div>
+                    <div className="text-sm text-gray-500">{t?.employeesCovered || "Employees covered"}</div>
                   </div>
                   <div className="h-12 w-12 rounded-full bg-primary-100 flex items-center justify-center">
                     <BriefcaseIcon className="h-6 w-6 text-primary-600" />
                   </div>
                   <div>
                     <div className="font-medium">500+</div>
-                    <div className="text-sm text-gray-500">{t.corporateClients}</div>
+                    <div className="text-sm text-gray-500">{t?.corporateClients || "Corporate clients"}</div>
                   </div>
                 </div>
               </div>
@@ -262,8 +281,8 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
                         <BriefcaseIcon className="h-16 w-16 text-primary-600" />
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">{t.benefitsManagement}</h3>
-                    <p className="mt-2 text-gray-600">{t.tailoredSolutions}</p>
+                    <h3 className="text-xl font-bold text-gray-900">{t?.benefitsManagement || "Benefits Management"}</h3>
+                    <p className="mt-2 text-gray-600">{t?.tailoredSolutions || "Tailored solutions for businesses of all sizes"}</p>
                   </div>
                 </div>
               </div>
@@ -272,7 +291,7 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
           
           {/* Benefits Section */}
           <div className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">{t.solutionsTitle}</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">{t?.solutionsTitle || "Our Benefits Solutions"}</h2>
             
             <div className="space-y-16">
               {employeeBenefits.map((benefit, index) => (
@@ -285,9 +304,9 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
                       <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
                       <p className="text-lg text-gray-700 mb-6">{benefit.description}</p>
                       <div className="mb-6">
-                        <h4 className="font-medium text-gray-900 mb-2">{t.keyFeatures}</h4>
+                        <h4 className="font-medium text-gray-900 mb-2">{t?.keyFeatures || "Key Features:"}</h4>
                         <ul className="space-y-2">
-                          {benefit.benefits.map((item, i) => (
+                          {benefit.benefits.map((item: string, i: number) => (
                             <li key={i} className="flex items-start">
                               <span className="text-primary-600 mr-2">•</span>
                               <span>{item}</span>
@@ -296,7 +315,7 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
                         </ul>
                       </div>
                       <button className="mt-2 bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-6 rounded-md transition-colors w-max">
-                        {t.learnMore}
+                        {t?.learnMore || "Learn More"}
                       </button>
                     </div>
                     <div className={index % 2 === 1 ? "lg:order-first" : ""}>
@@ -310,16 +329,16 @@ async function BenefitsContent({ locale, dictionary }: BenefitsContentProps) {
           
           {/* CTA Section */}
           <div className="bg-primary-600 text-white p-10 rounded-xl text-center">
-            <h2 className="text-3xl font-bold mb-4">{t.ctaTitle}</h2>
+            <h2 className="text-3xl font-bold mb-4">{t?.ctaTitle || "Elevate Your Employee Benefits Today"}</h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              {t.ctaDescription}
+              {t?.ctaDescription || "Contact us to learn how our customizable employee benefits solutions, including wellness programs, can help you attract and retain top talent."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-primary-600 hover:bg-primary-50 font-medium py-3 px-8 rounded-md transition-colors">
-                {t.requestConsultation}
+                {t?.requestConsultation || "Request a Consultation"}
               </button>
               <button className="bg-primary-700 border border-white hover:bg-primary-800 text-white font-medium py-3 px-8 rounded-md transition-colors">
-                {t.viewPricing}
+                {t?.viewPricing || "View Pricing"}
               </button>
             </div>
           </div>

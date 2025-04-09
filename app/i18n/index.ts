@@ -75,6 +75,48 @@ export interface Dictionary {
     privacy: string;
     terms: string;
   };
+  // Employee benefits section
+  employeeBenefits?: {
+    pageTitle?: string;
+    pageSubtitle?: string;
+    overviewTitle?: string;
+    overviewDescription?: string;
+    exploreButton?: string;
+    strategicTitle?: string;
+    strategicDescription1?: string;
+    strategicDescription2?: string;
+    employeesCovered?: string;
+    corporateClients?: string;
+    benefitsManagement?: string;
+    tailoredSolutions?: string;
+    solutionsTitle?: string;
+    keyFeatures?: string;
+    learnMore?: string;
+    ctaTitle?: string;
+    ctaDescription?: string;
+    requestConsultation?: string;
+    viewPricing?: string;
+    health?: {
+      title?: string;
+      description?: string;
+      features?: string[];
+    };
+    retirement?: {
+      title?: string;
+      description?: string;
+      features?: string[];
+    };
+    professional?: {
+      title?: string;
+      description?: string;
+      features?: string[];
+    };
+    wellness?: {
+      title?: string;
+      description?: string;
+      features?: string[];
+    };
+  };
 }
 
 export function getDictionary(locale: Locale): Dictionary {
