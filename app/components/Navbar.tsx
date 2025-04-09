@@ -261,13 +261,6 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 {dictionary.nav.contact}
               </Link>
               <Link
-                href={`/${locale}/contact`}
-                className="block px-3 py-2 btn-primary w-full text-center mt-4"
-                onClick={() => setIsOpen(false)}
-              >
-                {dictionary.nav.contact}
-              </Link>
-              <Link
                 href={`/${locale}/contact?apply=true`}
                 className="block px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg w-full text-center mt-4"
                 onClick={() => setIsOpen(false)}
