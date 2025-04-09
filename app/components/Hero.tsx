@@ -129,7 +129,7 @@ export default function Hero({ dictionary, locale }: HeroProps) {
   };
 
   return (
-    <section className="pt-40 pb-16 md:pt-48 lg:pt-52 md:pb-24 overflow-hidden">
+    <section className="pt-44 pb-16 sm:pt-46 md:pt-48 lg:pt-52 md:pb-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
