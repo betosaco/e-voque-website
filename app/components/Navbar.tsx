@@ -113,7 +113,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
   };
 
   // Get the "Apply Now" text from dictionary or use a default
-  const applyNowText = dictionary.hero?.applyNow || "Start working with us now!";
+  const applyNowText = dictionary.hero?.applyNow || "Apply here";
 
   return (
     <nav
@@ -188,7 +188,8 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
       </div>
       
       {/* Second row with Apply Now button - full width */}
-      <div className="w-full mt-4 py-4 bg-gradient-to-r from-purple-600 to-indigo-800 flex justify-center">
+      <div className="w-full mt-4 py-4 bg-gradient-to-r from-purple-600 to-indigo-800 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
+        <div className="text-white text-xl font-semibold">Start working with us now!</div>
         <Link
           href={`/${locale}/contact?apply=true`}
           className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300 text-base"
