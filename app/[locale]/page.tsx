@@ -24,12 +24,16 @@ export default async function Home(props: PageProps) {
   const params = await props.params;
   const locale = params.locale;
   
+  // Define safeLocale
+  // Define safeLocale
+  const safeLocale = typeof locale === "string" ? locale : "en";
+  
+  
   if (!locale || typeof locale !== 'string') {
     return notFound();
   }
 
   // Safely access locale directly
-  const safeLocale = locale || 'en';
   
   // Validate locale against supported locales
   if (!locales.includes(safeLocale as Locale)) {

@@ -26,9 +26,11 @@ export default async function ContactPage(props: PageProps) {
   const params = await props.params;
   const locale = params.locale;
   
-  // Get locale from params
+  // Define safeLocale
+  const safeLocale = typeof locale === "string" ? locale : "en";
   
-  // This is needed since we can't use localeParam directly
+  
+  
   
   // Validate locale
   if (!locales.includes(safeLocale as Locale)) {

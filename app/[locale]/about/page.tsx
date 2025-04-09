@@ -17,8 +17,11 @@ export default async function AboutUsPage(props: PageProps) {
   // Await the params object before accessing its properties
   const params = await props.params;
   const locale = params.locale;
-  const safeLocale = typeof locale === "string" ? locale : "en";  
-  // This is needed since we can't use locale directly
+  
+  // Define safeLocale
+  // Define safeLocale
+  const safeLocale = typeof locale === "string" ? locale : "en";
+  
   
   // Validate locale
   if (!locales.includes(safeLocale as Locale)) {

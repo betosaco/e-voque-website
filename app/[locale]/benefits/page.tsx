@@ -26,7 +26,11 @@ export default async function BenefitsPage(props: PageProps) {
   const locale = params.locale;
   
   // Define safeLocale
-  const safeLocale = typeof locale === 'string' ? locale : 'en';
+  // Define safeLocale
+  const safeLocale = typeof locale === "string" ? locale : "en";
+  
+  
+  // Define safeLocale
   
   // Validate locale
   if (!locales.includes(safeLocale as Locale)) {

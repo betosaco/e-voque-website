@@ -12,7 +12,10 @@ export default async function PrivacyPage(props: PageProps) {
   const params = await props.params;
   const locale = params.locale;
   
-  // This is needed since we can't use localeParam directly
+  // Define safeLocale
+  const safeLocale = typeof locale === "string" ? locale : "en";
+  
+  
   
   // Validate locale
   if (!locales.includes(safeLocale as Locale)) {
