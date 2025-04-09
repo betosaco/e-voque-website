@@ -161,12 +161,6 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
               {dictionary.nav.contact}
             </NavLink>
             <LanguageSwitcher />
-            <Link
-              href={`/${locale}/contact`}
-              className="btn-primary"
-            >
-              {dictionary.nav.contact}
-            </Link>
           </div>
 
           {/* Mobile menu button */}
