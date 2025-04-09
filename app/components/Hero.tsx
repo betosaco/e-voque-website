@@ -202,81 +202,119 @@ export default function Hero({ dictionary, locale }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative order-1 md:order-2 mb-8 md:mb-0"
           >
-            {/* Enhanced Image Carousel */}
-            <div className="aspect-w-4 aspect-h-3 bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg shadow-xl overflow-hidden relative">
-              <div className="carousel-container w-full h-full relative">
-                {/* Carousel slides with horizontal movement */}
-                <div className="flex w-full h-full relative">
-                  {carouselImages.map((image, index) => (
-                    <motion.div 
-                      key={index}
-                      className="w-full h-full flex-shrink-0 absolute"
-                      initial={{ x: index === currentImage ? 0 : index < currentImage ? '-100%' : '100%' }}
-                      animate={{ 
-                        x: index === currentImage ? 0 : 
-                           index < currentImage ? '-100%' : '100%',
-                        zIndex: index === currentImage ? 10 : 0
-                      }}
-                      transition={{ 
-                        duration: 0.7,
-                        ease: "easeInOut" 
-                      }}
-                    >
-                      {/* Fallback icon for when image doesn't load */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="opacity-40">
-                          {image.icon}
-                        </div>
-                      </div>
-                      
-                      {/* Background gradient */}
-                      <div className={`absolute inset-0 bg-gradient-to-tr ${image.color}`}></div>
-                      
-                      {/* Placeholder text for future images */}
-                      {!image.image && image.placeholderText && (
+            {/* Enhanced Image Carousel - SIMPLIFIED IMPLEMENTATION */}
+            <div className="aspect-w-4 aspect-h-3 bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg shadow-xl overflow-hidden">
+              <div className="h-full w-full relative">
+                {/* Slides container */}
+                <div className="h-full w-full relative">
+                  {carouselImages.map((image, index) => {
+                    // Calculate direction
+                    let direction = 0;
+                    if (index === currentImage) {
+                      direction = 0;
+                    } else if (
+                      (index > currentImage && !(currentImage === 0 && index === carouselImages.length - 1)) || 
+                      (currentImage === carouselImages.length - 1 && index === 0)
+                    ) {
+                      direction = 1; // Right
+                    } else {
+                      direction = -1; // Left
+                    }
+                    
+                    // Determine initial and animate properties
+                    const initial = { 
+                      x: index === currentImage ? 0 : (direction > 0 ? '100%' : '-100%'),
+                      opacity: index === currentImage ? 1 : 0
+                    };
+                    
+                    const animate = { 
+                      x: index === currentImage ? 0 : (direction > 0 ? '100%' : '-100%'),
+                      opacity: index === currentImage ? 1 : 0,
+                      zIndex: index === currentImage ? 1 : 0
+                    };
+                    
+                    return (
+                      <motion.div
+                        key={index}
+                        className="absolute inset-0 h-full w-full"
+                        initial={initial}
+                        animate={animate}
+                        transition={{
+                          x: { type: "spring", stiffness: 300, damping: 30 },
+                          opacity: { duration: 0.5 }
+                        }}
+                      >
+                        {/* Background gradient */}
+                        <div className={`absolute inset-0 bg-gradient-to-tr ${image.color}`}></div>
+                        
+                        {/* Icon */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="font-mono text-white/90 text-sm md:text-base text-center border-4 border-dashed border-white/60 p-6 rounded-lg bg-black/30 backdrop-blur-sm max-w-[85%] shadow-lg">
-                            <div className="bg-white/20 py-2 px-3 rounded-md mb-3 inline-block">
-                              <span className="text-white font-bold text-lg">FUTURE IMAGE</span>
-                            </div>
-                            <p className="text-lg">{image.placeholderText}</p>
-                            <div className="mt-3 bg-white/10 px-3 py-1 rounded-full inline-block">
-                              <span className="text-white/80 text-sm">Image {index + 1} of {carouselImages.length}</span>
-                            </div>
+                          <div className="opacity-40">
+                            {image.icon}
                           </div>
                         </div>
-                      )}
-                      
-                      {/* Content */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10">
-                        <motion.div
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={index === currentImage ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                          transition={{ duration: 0.5, delay: 0.3 }}
-                          className="text-3xl md:text-4xl font-bold text-white mb-4"
-                        >
-                          {image.title}
-                        </motion.div>
-                        <motion.div
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={index === currentImage ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                          transition={{ duration: 0.5, delay: 0.4 }}
-                          className="text-lg text-white max-w-md"
-                        >
-                          {image.description}
-                        </motion.div>
-                      </div>
-                    </motion.div>
+                        
+                        {/* Placeholder text */}
+                        {!image.image && image.placeholderText && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="font-mono text-white/90 text-sm md:text-base text-center border-4 border-dashed border-white/60 p-6 rounded-lg bg-black/30 backdrop-blur-sm max-w-[85%] shadow-lg">
+                              <div className="bg-white/20 py-2 px-3 rounded-md mb-3 inline-block">
+                                <span className="text-white font-bold text-lg">FUTURE IMAGE</span>
+                              </div>
+                              <p className="text-lg">{image.placeholderText}</p>
+                              <div className="mt-3 bg-white/10 px-3 py-1 rounded-full inline-block">
+                                <span className="text-white/80 text-sm">Image {index + 1} of {carouselImages.length}</span>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                        
+                        {/* Content */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10">
+                          <motion.div
+                            className="text-3xl md:text-4xl font-bold text-white mb-4"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, delay: 0.2 }}
+                          >
+                            {image.title}
+                          </motion.div>
+                          <motion.div
+                            className="text-lg text-white max-w-md"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, delay: 0.3 }}
+                          >
+                            {image.description}
+                          </motion.div>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+                
+                {/* Navigation controls */}
+                <div className="absolute inset-x-0 bottom-4 z-30 flex justify-center space-x-3">
+                  {carouselImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => changeSlide(index)}
+                      disabled={isAnimating}
+                      className={`transition-all duration-300 focus:outline-none ${
+                        index === currentImage 
+                          ? 'w-8 h-2 bg-white rounded-full' 
+                          : 'w-2 h-2 bg-white/50 hover:bg-white/70 rounded-full'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
                   ))}
                 </div>
-              </div>
-              
-              {/* Carousel navigation buttons */}
-              <div className="absolute inset-0 flex items-center justify-between px-4 z-20">
+                
+                {/* Arrow buttons */}
                 <button 
                   onClick={prevImage}
                   disabled={isAnimating}
-                  className="bg-white/20 hover:bg-white/30 rounded-full p-2 backdrop-blur-sm transform transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 rounded-full p-2 backdrop-blur-sm transform transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50"
                   aria-label="Previous image"
                 >
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -287,30 +325,13 @@ export default function Hero({ dictionary, locale }: HeroProps) {
                 <button 
                   onClick={nextImage}
                   disabled={isAnimating}
-                  className="bg-white/20 hover:bg-white/30 rounded-full p-2 backdrop-blur-sm transform transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 rounded-full p-2 backdrop-blur-sm transform transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white/50"
                   aria-label="Next image"
                 >
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </button>
-              </div>
-              
-              {/* Improved carousel indicators */}
-              <div className="absolute bottom-4 left-0 right-0 z-20 flex justify-center space-x-3">
-                {carouselImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => changeSlide(index)}
-                    disabled={isAnimating}
-                    className={`transition-all duration-300 focus:outline-none ${
-                      index === currentImage 
-                        ? 'w-8 h-2 bg-white rounded-full' 
-                        : 'w-2 h-2 bg-white/50 hover:bg-white/70 rounded-full'
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
               </div>
             </div>
             
