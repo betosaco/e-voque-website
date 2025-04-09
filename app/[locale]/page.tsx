@@ -55,7 +55,6 @@ async function PageContent({ locale, dictionary }: PageContentProps) {
   const AboutUs = (await import('../components/AboutUs')).default;
   const Services = (await import('../components/Services')).default;
   const Benefits = (await import('../components/Benefits')).default;
-  const WellnessBenefits = (await import('../components/WellnessBenefits')).default;
   const Contact = (await import('../components/Contact')).default;
   const Footer = (await import('../components/Footer')).default;
   
@@ -71,9 +70,6 @@ async function PageContent({ locale, dictionary }: PageContentProps) {
       </section>
       <section id="benefits">
         <Benefits dictionary={dictionary} />
-      </section>
-      <section id="wellness">
-        <WellnessBenefits dictionary={dictionary} />
       </section>
       <section id="contact">
         <Contact dictionary={dictionary} />
