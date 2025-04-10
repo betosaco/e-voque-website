@@ -138,5 +138,248 @@
     "ctaDescription": "Contáctenos para saber cómo nuestras soluciones personalizables de beneficios para empleados, incluidos los programas de bienestar, pueden ayudarle a atraer y retener el mejor talento.",
     "requestConsultation": "Solicitar una Consulta",
     "viewPricing": "Ver Precios"
+  },
+  "requirements": {
+    "pageTitle": "Requisitos para Intérpretes",
+    "pageSubtitle": "Conozca lo que se necesita para formar parte de nuestra red global de intérpretes y traductores profesionales.",
+    "overviewTitle": "Únase a Nuestro Equipo Elite de Intérpretes",
+    "overviewDescription": "E-Voque siempre está buscando profesionales de idiomas talentosos para unirse a nuestra red. Mantenemos altos estándares para garantizar un servicio de calidad para nuestros clientes. Revise los requisitos a continuación para ver si califica.",
+    "requirements": {
+      "languageProficiency": {
+        "title": "Dominio de Idiomas",
+        "description": "Se requiere fluidez en al menos dos idiomas. Debe poder hablar, leer y escribir con dominio nativo o casi nativo en sus idiomas de trabajo.",
+        "details": [
+          "Fluidez nativa o casi nativa en sus idiomas principales",
+          "Fuerte comprensión de dialectos y modismos",
+          "Excelente acento y pronunciación",
+          "Capacidad para cambiar entre idiomas con fluidez"
+        ]
+      },
+      "education": {
+        "title": "Educación y Certificación",
+        "description": "Se prefiere educación formal o certificación en interpretación/traducción, pero se puede considerar experiencia equivalente.",
+        "details": [
+          "Título en traducción, interpretación o lingüística (preferido)",
+          "Certificación profesional de organismos reconocidos",
+          "Formación especializada en campos médicos, legales o técnicos",
+          "Educación continua en habilidades lingüísticas"
+        ]
+      },
+      "experience": {
+        "title": "Experiencia Profesional",
+        "description": "Se requiere experiencia previa en servicios de interpretación o traducción, con preferencia a aquellos con experiencia en industrias especializadas.",
+        "details": [
+          "Mínimo 1-2 años de experiencia profesional en interpretación",
+          "Experiencia en interpretación telefónica o por video",
+          "Experiencia específica en sectores (médico, legal, empresarial)",
+          "Habilidades de comunicación orientadas al cliente"
+        ]
+      },
+      "technical": {
+        "title": "Requisitos Técnicos",
+        "description": "Nuestros intérpretes remotos necesitan equipos confiables y un entorno de trabajo adecuado para ofrecer un servicio de calidad.",
+        "details": [
+          "Computadora confiable con sistema operativo actualizado",
+          "Conexión a Internet de alta velocidad (mínimo 25 Mbps)",
+          "Auriculares profesionales con cancelación de ruido",
+          "Espacio de trabajo tranquilo y privado, libre de distracciones"
+        ]
+      },
+      "availability": {
+        "title": "Disponibilidad y Flexibilidad",
+        "description": "Atendemos a clientes 24/7 y valoramos a los intérpretes que pueden ofrecer opciones de programación flexibles.",
+        "details": [
+          "Capacidad para comprometerse a horarios semanales regulares",
+          "Preferencia por aquellos disponibles durante horas de alta demanda",
+          "Confiabilidad en el cumplimiento de los turnos programados",
+          "Capacidad de respuesta a necesidades urgentes de interpretación"
+        ]
+      },
+      "legal": {
+        "title": "Requisitos Legales",
+        "description": "Todos los intérpretes deben cumplir con requisitos legales específicos para trabajar con nuestra plataforma.",
+        "details": [
+          "Autorización legal para trabajar en su país de residencia",
+          "Capacidad para pasar verificaciones de antecedentes cuando sea necesario",
+          "Disposición para firmar acuerdos de confidencialidad",
+          "Cumplimiento de las regulaciones de protección de datos"
+        ]
+      }
+    },
+    "applicationProcess": {
+      "title": "Proceso de Aplicación",
+      "steps": {
+        "submitApplication": {
+          "title": "Envíe su Solicitud",
+          "description": "Complete nuestro formulario de solicitud en línea con su información personal, habilidades lingüísticas, educación y experiencia profesional."
+        },
+        "initialScreening": {
+          "title": "Evaluación Inicial",
+          "description": "Nuestro equipo de reclutamiento revisará su solicitud y se pondrá en contacto con usted para una evaluación telefónica inicial si sus calificaciones coinciden con nuestras necesidades."
+        },
+        "languageAssessment": {
+          "title": "Evaluación de Idiomas",
+          "description": "Los candidatos calificados completarán una evaluación integral de idiomas para evaluar la fluidez, precisión y habilidades de interpretación."
+        },
+        "interview": {
+          "title": "Entrevista y Verificación de Antecedentes",
+          "description": "Los candidatos exitosos tendrán una entrevista con nuestro equipo y completarán una verificación de antecedentes según se requiera para el puesto."
+        },
+        "onboarding": {
+          "title": "Incorporación y Capacitación",
+          "description": "Una vez aceptado, completará nuestro proceso de incorporación y capacitación para familiarizarse con nuestra plataforma y procedimientos."
+        }
+      }
+    },
+    "ctaTitle": "¿Listo para Aplicar?",
+    "ctaDescription": "Si cumple con nuestros requisitos y le apasiona conectar a personas a través de diferentes idiomas, ¡queremos saber de usted!",
+    "applyNow": "Aplicar Ahora"
+  },
+  "apply": {
+    "pageTitle": "Únase a Nuestro Equipo de Expertos",
+    "pageSubtitle": "Aplique hoy para formar parte de nuestra red global de intérpretes y traductores profesionales.",
+    "videoTitle": "Por Qué Unirse a E-Voque",
+    "videoDescription": "Escuche a nuestros intérpretes hablar sobre su experiencia trabajando con nosotros",
+    "benefitsTitle": "Nuestros Programas de Beneficios",
+    "benefitsPrograms": {
+      "compensation": {
+        "title": "Compensación Competitiva",
+        "description": "Gane tarifas superiores basadas en sus habilidades y experiencia. Ofrecemos algunos de los salarios más competitivos de la industria.",
+        "features": [
+          "Estructura de pago transparente",
+          "Bonos por rendimiento",
+          "Pagos puntuales",
+          "Incentivos por referidos"
+        ]
+      },
+      "health": {
+        "title": "Salud y Bienestar",
+        "description": "Nos preocupamos por su bienestar. Aproveche nuestros beneficios de salud diseñados para profesionales remotos.",
+        "features": [
+          "Opciones de seguro de salud",
+          "Recursos de salud mental",
+          "Estipendios para bienestar",
+          "Clases virtuales de fitness"
+        ]
+      },
+      "flexibility": {
+        "title": "Programación Flexible",
+        "description": "Trabaje cuando le convenga. Nuestra plataforma le permite establecer su disponibilidad y tomar el control de su equilibrio entre vida laboral y personal.",
+        "features": [
+          "Establezca sus propios horarios",
+          "Sin requisitos mínimos",
+          "Programación anticipada disponible",
+          "Seguimiento de tiempo sin complicaciones"
+        ]
+      },
+      "development": {
+        "title": "Desarrollo Profesional",
+        "description": "Desarrolle sus habilidades y avance en su carrera con nuestras oportunidades de capacitación y certificación.",
+        "features": [
+          "Reembolsos para certificaciones",
+          "Talleres de desarrollo de habilidades",
+          "Pruebas de competencia lingüística",
+          "Mentoría profesional"
+        ]
+      },
+      "office": {
+        "title": "Acceso a Oficina Remota",
+        "description": "Acceso a nuestro espacio de coworking premium en MatMax Cowork en Miraflores cuando desee un cambio de escenario.",
+        "features": [
+          "Ubicado en Alcanfores 410, Miraflores",
+          "Todas las comodidades de oficina",
+          "Salas de reuniones para llamadas con clientes",
+          "Oportunidades de networking"
+        ]
+      }
+    },
+    "formTitle": "Formulario de Solicitud",
+    "formDescription": "Complete el formulario a continuación para solicitar un puesto como intérprete o traductor con E-Voque.",
+    "personalInfo": {
+      "title": "Información Personal",
+      "fullName": "Nombre Completo *",
+      "email": "Correo Electrónico *",
+      "phone": "Número de Teléfono *",
+      "location": "Ubicación"
+    },
+    "professionalInfo": {
+      "title": "Información Profesional",
+      "languages": "Idiomas (fluido en) *",
+      "experience": "Años de Experiencia *",
+      "experienceOptions": {
+        "select": "Seleccione experiencia",
+        "lessThan1": "Menos de 1 año",
+        "1to3": "1-3 años",
+        "3to5": "3-5 años",
+        "5to10": "5-10 años",
+        "10plus": "10+ años"
+      },
+      "serviceType": "Tipo de Servicio *",
+      "serviceOptions": {
+        "select": "Seleccione tipo de servicio",
+        "interpretation": "Interpretación",
+        "translation": "Traducción",
+        "both": "Ambos"
+      },
+      "specialization": "Áreas de Especialización *",
+      "specializationOptions": {
+        "medical": "Médico",
+        "legal": "Legal",
+        "business": "Negocios",
+        "technical": "Técnico"
+      }
+    },
+    "resumeUpload": {
+      "title": "Carga de Currículum",
+      "uploadButton": "Haga clic para cargar",
+      "dragDrop": "o arrastre y suelte",
+      "fileTypes": "PDF, DOC o DOCX hasta 5MB"
+    },
+    "additionalInfo": "Información Adicional",
+    "additionalPlaceholder": "Cuéntenos un poco más sobre usted y por qué le gustaría unirse a nuestro equipo...",
+    "submitButton": "Enviar Solicitud",
+    "termsAgreement": "Al enviar este formulario, acepta nuestros términos y política de privacidad.",
+    "testimonials": {
+      "title": "Lo Que Dicen Nuestros Intérpretes",
+      "testimonial1": {
+        "name": "Juan Sánchez",
+        "role": "Intérprete de Español",
+        "quote": "Trabajar con E-Voque ha sido un cambio de juego para mi carrera. La programación flexible me permite mantener el equilibrio entre vida y trabajo mientras gano un excelente ingreso."
+      },
+      "testimonial2": {
+        "name": "Mei Wang",
+        "role": "Traductora de Mandarín",
+        "quote": "Las oportunidades de desarrollo profesional en E-Voque me han ayudado a especializarme en traducción médica y a aumentar significativamente mis habilidades y base de clientes."
+      },
+      "testimonial3": {
+        "name": "Ahmed Khalid",
+        "role": "Intérprete de Árabe",
+        "quote": "Aprecio la estructura de pago transparente y los pagos puntuales. La opción de oficina remota en Miraflores es perfecta cuando necesito un entorno profesional para reuniones con clientes."
+      }
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "question1": {
+        "title": "¿Qué calificaciones necesito?",
+        "answer": "Buscamos fluidez en al menos dos idiomas, experiencia profesional en interpretación o traducción, y fuertes habilidades de comunicación. El conocimiento especializado en campos como médico, legal o técnico es una ventaja."
+      },
+      "question2": {
+        "title": "¿Cómo funciona el proceso de solicitud?",
+        "answer": "Después de enviar su solicitud, nuestro equipo revisará sus calificaciones. Si es seleccionado, será invitado a una evaluación de idioma y entrevista. Todo el proceso generalmente toma de 1 a 2 semanas."
+      },
+      "question3": {
+        "title": "¿Puedo trabajar a tiempo parcial o completo?",
+        "answer": "Sí, ofrecemos oportunidades tanto a tiempo parcial como a tiempo completo. Nuestra plataforma le permite establecer su propia disponibilidad, lo que la hace perfecta para aquellos que buscan arreglos de trabajo flexibles."
+      },
+      "question4": {
+        "title": "¿Qué equipo necesito?",
+        "answer": "Necesitará una computadora confiable, conexión a Internet de alta velocidad, un micrófono/auriculares de calidad y un espacio de trabajo tranquilo. Para algunas tareas especializadas, puede ser necesario equipo adicional."
+      }
+    },
+    "finalCta": {
+      "title": "¿Listo para Comenzar su Viaje?",
+      "description": "Envíe su solicitud hoy y únase a nuestra red de intérpretes profesionales que están marcando la diferencia en todo el mundo.",
+      "learnRequirements": "Conocer los Requisitos"
+    }
   }
 } 

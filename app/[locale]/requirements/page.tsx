@@ -42,12 +42,15 @@ export default async function RequirementsPage(props: PageProps) {
 }
 
 function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
+  // Get the requirements dictionary
+  const req = dictionary.requirements || {};
+  
   const requirements = [
     {
       icon: <LanguageIcon className="h-8 w-8 text-primary-600" />,
-      title: "Language Proficiency",
-      description: "Fluency in at least two languages is required. You must be able to speak, read, and write with native or near-native proficiency in your working languages.",
-      details: [
+      title: req.requirements?.languageProficiency?.title || "Language Proficiency",
+      description: req.requirements?.languageProficiency?.description || "Fluency in at least two languages is required. You must be able to speak, read, and write with native or near-native proficiency in your working languages.",
+      details: req.requirements?.languageProficiency?.details || [
         "Native or near-native fluency in your primary languages",
         "Strong comprehension of dialects and idioms",
         "Excellent accent and pronunciation",
@@ -56,9 +59,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
     },
     {
       icon: <AcademicCapIcon className="h-8 w-8 text-primary-600" />,
-      title: "Education & Certification",
-      description: "Formal education or certification in interpretation/translation is highly preferred, but equivalent experience may be considered.",
-      details: [
+      title: req.requirements?.education?.title || "Education & Certification",
+      description: req.requirements?.education?.description || "Formal education or certification in interpretation/translation is highly preferred, but equivalent experience may be considered.",
+      details: req.requirements?.education?.details || [
         "Degree in translation, interpretation, or linguistics (preferred)",
         "Professional certification from recognized bodies",
         "Specialized training in medical, legal, or technical fields",
@@ -67,9 +70,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
     },
     {
       icon: <BriefcaseIcon className="h-8 w-8 text-primary-600" />,
-      title: "Professional Experience",
-      description: "Prior experience in interpretation or translation services is required, with preference given to those with specialized industry experience.",
-      details: [
+      title: req.requirements?.experience?.title || "Professional Experience",
+      description: req.requirements?.experience?.description || "Prior experience in interpretation or translation services is required, with preference given to those with specialized industry experience.",
+      details: req.requirements?.experience?.details || [
         "Minimum 1-2 years of professional interpretation experience",
         "Experience in over-the-phone or video interpretation",
         "Industry-specific experience (medical, legal, business)",
@@ -78,9 +81,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
     },
     {
       icon: <ComputerDesktopIcon className="h-8 w-8 text-primary-600" />,
-      title: "Technical Requirements",
-      description: "Our remote interpreters need reliable equipment and a suitable work environment to deliver quality service.",
-      details: [
+      title: req.requirements?.technical?.title || "Technical Requirements",
+      description: req.requirements?.technical?.description || "Our remote interpreters need reliable equipment and a suitable work environment to deliver quality service.",
+      details: req.requirements?.technical?.details || [
         "Reliable computer with updated operating system",
         "High-speed internet connection (minimum 25 Mbps)",
         "Professional headset with noise-cancellation",
@@ -89,9 +92,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
     },
     {
       icon: <ClockIcon className="h-8 w-8 text-primary-600" />,
-      title: "Availability & Flexibility",
-      description: "We serve clients 24/7 and value interpreters who can offer flexible scheduling options.",
-      details: [
+      title: req.requirements?.availability?.title || "Availability & Flexibility",
+      description: req.requirements?.availability?.description || "We serve clients 24/7 and value interpreters who can offer flexible scheduling options.",
+      details: req.requirements?.availability?.details || [
         "Ability to commit to regular weekly hours",
         "Preference for those available during high-demand times",
         "Reliability in adhering to scheduled shifts",
@@ -100,9 +103,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
     },
     {
       icon: <DocumentCheckIcon className="h-8 w-8 text-primary-600" />,
-      title: "Legal Requirements",
-      description: "All interpreters must meet specific legal requirements to work with our platform.",
-      details: [
+      title: req.requirements?.legal?.title || "Legal Requirements",
+      description: req.requirements?.legal?.description || "All interpreters must meet specific legal requirements to work with our platform.",
+      details: req.requirements?.legal?.details || [
         "Legal authorization to work in your country of residence",
         "Ability to pass background checks where required",
         "Willingness to sign confidentiality agreements",
@@ -119,10 +122,10 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
           {/* Hero section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Interpreter Requirements
+              {req.pageTitle || "Interpreter Requirements"}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Learn about what it takes to become a part of our global network of professional interpreters and translators.
+              {req.pageSubtitle || "Learn about what it takes to become a part of our global network of professional interpreters and translators."}
             </p>
           </div>
           
@@ -131,9 +134,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
             <div className="flex flex-col md:flex-row items-center mb-6">
               <UserGroupIcon className="h-12 w-12 text-primary-600 md:mr-6 mb-4 md:mb-0" />
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Join Our Elite Team of Interpreters</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">{req.overviewTitle || "Join Our Elite Team of Interpreters"}</h2>
                 <p className="text-lg text-gray-700">
-                  E-Voque is always looking for talented language professionals to join our network. We maintain high standards to ensure quality service for our clients. Review the requirements below to see if you qualify.
+                  {req.overviewDescription || "E-Voque is always looking for talented language professionals to join our network. We maintain high standards to ensure quality service for our clients. Review the requirements below to see if you qualify."}
                 </p>
               </div>
             </div>
@@ -155,7 +158,7 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
                       <div className="bg-gray-50 p-4 rounded-md">
                         <h4 className="font-medium text-gray-900 mb-2">Key Requirements:</h4>
                         <ul className="space-y-2">
-                          {requirement.details.map((detail, i) => (
+                          {requirement.details.map((detail: string, i: number) => (
                             <li key={i} className="flex items-start">
                               <CheckCircleIcon className="h-5 w-5 text-primary-600 mr-2 mt-0.5 flex-shrink-0" />
                               <span className="text-gray-700">{detail}</span>
@@ -172,7 +175,7 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
           
           {/* Application process section */}
           <div className="bg-white rounded-xl shadow-md p-8 mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Application Process</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">{req.applicationProcess?.title || "Application Process"}</h2>
             
             <div className="space-y-6">
               <div className="flex items-start">
@@ -180,9 +183,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
                   <span className="font-bold text-primary-600">1</span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-1">Submit Your Application</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-1">{req.applicationProcess?.steps?.submitApplication?.title || "Submit Your Application"}</h3>
                   <p className="text-gray-700">
-                    Complete our online application form with your personal information, language skills, education, and professional experience.
+                    {req.applicationProcess?.steps?.submitApplication?.description || "Complete our online application form with your personal information, language skills, education, and professional experience."}
                   </p>
                 </div>
               </div>
@@ -192,9 +195,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
                   <span className="font-bold text-primary-600">2</span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-1">Initial Screening</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-1">{req.applicationProcess?.steps?.initialScreening?.title || "Initial Screening"}</h3>
                   <p className="text-gray-700">
-                    Our recruitment team will review your application and contact you for an initial phone screening if your qualifications match our needs.
+                    {req.applicationProcess?.steps?.initialScreening?.description || "Our recruitment team will review your application and contact you for an initial phone screening if your qualifications match our needs."}
                   </p>
                 </div>
               </div>
@@ -204,9 +207,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
                   <span className="font-bold text-primary-600">3</span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-1">Language Assessment</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-1">{req.applicationProcess?.steps?.languageAssessment?.title || "Language Assessment"}</h3>
                   <p className="text-gray-700">
-                    Qualified candidates will complete a comprehensive language assessment to evaluate fluency, accuracy, and interpretation skills.
+                    {req.applicationProcess?.steps?.languageAssessment?.description || "Qualified candidates will complete a comprehensive language assessment to evaluate fluency, accuracy, and interpretation skills."}
                   </p>
                 </div>
               </div>
@@ -216,9 +219,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
                   <span className="font-bold text-primary-600">4</span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-1">Interview & Background Check</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-1">{req.applicationProcess?.steps?.interview?.title || "Interview & Background Check"}</h3>
                   <p className="text-gray-700">
-                    Successful candidates will have an interview with our team and complete a background check as required for the position.
+                    {req.applicationProcess?.steps?.interview?.description || "Successful candidates will have an interview with our team and complete a background check as required for the position."}
                   </p>
                 </div>
               </div>
@@ -228,9 +231,9 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
                   <span className="font-bold text-primary-600">5</span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900 mb-1">Onboarding & Training</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-1">{req.applicationProcess?.steps?.onboarding?.title || "Onboarding & Training"}</h3>
                   <p className="text-gray-700">
-                    Once accepted, you&apos;ll complete our onboarding process and training to familiarize yourself with our platform and procedures.
+                    {req.applicationProcess?.steps?.onboarding?.description || "Once accepted, you'll complete our onboarding process and training to familiarize yourself with our platform and procedures."}
                   </p>
                 </div>
               </div>
@@ -239,15 +242,15 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
           
           {/* CTA Section */}
           <div className="bg-primary-500 text-white p-10 rounded-xl text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Apply?</h2>
+            <h2 className="text-3xl font-bold mb-4">{req.ctaTitle || "Ready to Apply?"}</h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              If you meet our requirements and are passionate about connecting people across languages, we want to hear from you!
+              {req.ctaDescription || "If you meet our requirements and are passionate about connecting people across languages, we want to hear from you!"}
             </p>
             <a 
               href={`/${locale}/apply`} 
               className="inline-block bg-white text-primary-500 hover:bg-gray-100 font-medium py-3 px-8 rounded-md transition-colors"
             >
-              Apply Now
+              {req.applyNow || "Apply Now"}
             </a>
           </div>
         </div>

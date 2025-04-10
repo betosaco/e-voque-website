@@ -77,5 +77,248 @@
     "rights": "All rights reserved",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "requirements": {
+    "pageTitle": "Interpreter Requirements",
+    "pageSubtitle": "Learn about what it takes to become a part of our global network of professional interpreters and translators.",
+    "overviewTitle": "Join Our Elite Team of Interpreters",
+    "overviewDescription": "E-Voque is always looking for talented language professionals to join our network. We maintain high standards to ensure quality service for our clients. Review the requirements below to see if you qualify.",
+    "requirements": {
+      "languageProficiency": {
+        "title": "Language Proficiency",
+        "description": "Fluency in at least two languages is required. You must be able to speak, read, and write with native or near-native proficiency in your working languages.",
+        "details": [
+          "Native or near-native fluency in your primary languages",
+          "Strong comprehension of dialects and idioms",
+          "Excellent accent and pronunciation",
+          "Ability to switch between languages smoothly"
+        ]
+      },
+      "education": {
+        "title": "Education & Certification",
+        "description": "Formal education or certification in interpretation/translation is highly preferred, but equivalent experience may be considered.",
+        "details": [
+          "Degree in translation, interpretation, or linguistics (preferred)",
+          "Professional certification from recognized bodies",
+          "Specialized training in medical, legal, or technical fields",
+          "Continuing education in language skills"
+        ]
+      },
+      "experience": {
+        "title": "Professional Experience",
+        "description": "Prior experience in interpretation or translation services is required, with preference given to those with specialized industry experience.",
+        "details": [
+          "Minimum 1-2 years of professional interpretation experience",
+          "Experience in over-the-phone or video interpretation",
+          "Industry-specific experience (medical, legal, business)",
+          "Client-facing communication skills"
+        ]
+      },
+      "technical": {
+        "title": "Technical Requirements",
+        "description": "Our remote interpreters need reliable equipment and a suitable work environment to deliver quality service.",
+        "details": [
+          "Reliable computer with updated operating system",
+          "High-speed internet connection (minimum 25 Mbps)",
+          "Professional headset with noise-cancellation",
+          "Quiet, private workspace free from distractions"
+        ]
+      },
+      "availability": {
+        "title": "Availability & Flexibility",
+        "description": "We serve clients 24/7 and value interpreters who can offer flexible scheduling options.",
+        "details": [
+          "Ability to commit to regular weekly hours",
+          "Preference for those available during high-demand times",
+          "Reliability in adhering to scheduled shifts",
+          "Responsiveness to urgent interpretation needs"
+        ]
+      },
+      "legal": {
+        "title": "Legal Requirements",
+        "description": "All interpreters must meet specific legal requirements to work with our platform.",
+        "details": [
+          "Legal authorization to work in your country of residence",
+          "Ability to pass background checks where required",
+          "Willingness to sign confidentiality agreements",
+          "Compliance with data protection regulations"
+        ]
+      }
+    },
+    "applicationProcess": {
+      "title": "Application Process",
+      "steps": {
+        "submitApplication": {
+          "title": "Submit Your Application",
+          "description": "Complete our online application form with your personal information, language skills, education, and professional experience."
+        },
+        "initialScreening": {
+          "title": "Initial Screening",
+          "description": "Our recruitment team will review your application and contact you for an initial phone screening if your qualifications match our needs."
+        },
+        "languageAssessment": {
+          "title": "Language Assessment",
+          "description": "Qualified candidates will complete a comprehensive language assessment to evaluate fluency, accuracy, and interpretation skills."
+        },
+        "interview": {
+          "title": "Interview & Background Check",
+          "description": "Successful candidates will have an interview with our team and complete a background check as required for the position."
+        },
+        "onboarding": {
+          "title": "Onboarding & Training",
+          "description": "Once accepted, you'll complete our onboarding process and training to familiarize yourself with our platform and procedures."
+        }
+      }
+    },
+    "ctaTitle": "Ready to Apply?",
+    "ctaDescription": "If you meet our requirements and are passionate about connecting people across languages, we want to hear from you!",
+    "applyNow": "Apply Now"
+  },
+  "apply": {
+    "pageTitle": "Join Our Team of Experts",
+    "pageSubtitle": "Apply today to become part of our global network of professional interpreters and translators.",
+    "videoTitle": "Why Join E-Voque",
+    "videoDescription": "Hear from our interpreters about their experience working with us",
+    "benefitsTitle": "Our Benefits Programs",
+    "benefitsPrograms": {
+      "compensation": {
+        "title": "Competitive Compensation",
+        "description": "Earn top rates based on your skills and experience. We offer some of the most competitive pay in the industry.",
+        "features": [
+          "Transparent pay structure",
+          "Performance bonuses",
+          "Timely payments",
+          "Referral incentives"
+        ]
+      },
+      "health": {
+        "title": "Health & Wellness",
+        "description": "We care about your wellbeing. Take advantage of our health benefits designed for remote professionals.",
+        "features": [
+          "Health insurance options",
+          "Mental health resources",
+          "Wellness stipends",
+          "Virtual fitness classes"
+        ]
+      },
+      "flexibility": {
+        "title": "Flexible Scheduling",
+        "description": "Work when it suits you. Our platform allows you to set your availability and take control of your work-life balance.",
+        "features": [
+          "Set your own hours",
+          "No minimum requirements",
+          "Advance scheduling available",
+          "Seamless time tracking"
+        ]
+      },
+      "development": {
+        "title": "Professional Development",
+        "description": "Grow your skills and advance your career with our training and certification opportunities.",
+        "features": [
+          "Certification reimbursements",
+          "Skill development workshops",
+          "Language proficiency testing",
+          "Professional mentoring"
+        ]
+      },
+      "office": {
+        "title": "Remote Office Access",
+        "description": "Access to our premium coworking space at MatMax Cowork in Miraflores when you want a change of scenery.",
+        "features": [
+          "Located at Alcanfores 410, Miraflores",
+          "Full office amenities",
+          "Meeting rooms for client calls",
+          "Networking opportunities"
+        ]
+      }
+    },
+    "formTitle": "Application Form",
+    "formDescription": "Complete the form below to apply for a position as an interpreter or translator with E-Voque.",
+    "personalInfo": {
+      "title": "Personal Information",
+      "fullName": "Full Name *",
+      "email": "Email Address *",
+      "phone": "Phone Number *",
+      "location": "Location"
+    },
+    "professionalInfo": {
+      "title": "Professional Information",
+      "languages": "Languages (fluent in) *",
+      "experience": "Years of Experience *",
+      "experienceOptions": {
+        "select": "Select experience",
+        "lessThan1": "Less than 1 year",
+        "1to3": "1-3 years",
+        "3to5": "3-5 years",
+        "5to10": "5-10 years",
+        "10plus": "10+ years"
+      },
+      "serviceType": "Service Type *",
+      "serviceOptions": {
+        "select": "Select service type",
+        "interpretation": "Interpretation",
+        "translation": "Translation",
+        "both": "Both"
+      },
+      "specialization": "Specialization Areas *",
+      "specializationOptions": {
+        "medical": "Medical",
+        "legal": "Legal",
+        "business": "Business",
+        "technical": "Technical"
+      }
+    },
+    "resumeUpload": {
+      "title": "Resume Upload",
+      "uploadButton": "Click to upload",
+      "dragDrop": "or drag and drop",
+      "fileTypes": "PDF, DOC, or DOCX up to 5MB"
+    },
+    "additionalInfo": "Additional Information",
+    "additionalPlaceholder": "Tell us a bit more about yourself and why you'd like to join our team...",
+    "submitButton": "Submit Application",
+    "termsAgreement": "By submitting this form, you agree to our terms and privacy policy.",
+    "testimonials": {
+      "title": "What Our Interpreters Say",
+      "testimonial1": {
+        "name": "Juan Sanchez",
+        "role": "Spanish Interpreter",
+        "quote": "Working with E-Voque has been a game-changer for my career. The flexible scheduling allows me to maintain work-life balance while earning a great income."
+      },
+      "testimonial2": {
+        "name": "Mei Wang",
+        "role": "Mandarin Translator",
+        "quote": "The professional development opportunities at E-Voque have helped me specialize in medical translation and significantly grow my skills and client base."
+      },
+      "testimonial3": {
+        "name": "Ahmed Khalid",
+        "role": "Arabic Interpreter",
+        "quote": "I appreciate the transparent pay structure and on-time payments. The remote office option in Miraflores is perfect when I need a professional setting for client meetings."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "question1": {
+        "title": "What qualifications do I need?",
+        "answer": "We look for fluency in at least two languages, professional experience in interpretation or translation, and strong communication skills. Specialized knowledge in fields like medical, legal, or technical is a plus."
+      },
+      "question2": {
+        "title": "How does the application process work?",
+        "answer": "After submitting your application, our team will review your qualifications. If selected, you'll be invited for a language assessment and interview. The entire process typically takes 1-2 weeks."
+      },
+      "question3": {
+        "title": "Can I work part-time or full-time?",
+        "answer": "Yes, we offer both part-time and full-time opportunities. Our platform allows you to set your own availability, making it perfect for those seeking flexible work arrangements."
+      },
+      "question4": {
+        "title": "What equipment do I need?",
+        "answer": "You'll need a reliable computer, high-speed internet connection, a quality microphone/headset, and a quiet workspace. For some specialized assignments, additional equipment may be required."
+      }
+    },
+    "finalCta": {
+      "title": "Ready to Start Your Journey?",
+      "description": "Submit your application today and join our network of professional interpreters making a difference around the world.",
+      "learnRequirements": "Learn About Requirements"
+    }
   }
 } 
