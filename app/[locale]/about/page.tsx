@@ -66,7 +66,7 @@ async function AboutUsContent({ locale, dictionary }: AboutUsContentProps) {
                   E-Voque was founded in 2015 with a simple mission: to break down language barriers and connect people through professional interpretation services. What began as a small operation with a handful of interpreters has grown into a global network of language professionals serving clients across industries.
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
-                  Our founder, Maria Rodriguez, experienced firsthand the challenges of language barriers when her grandmother needed medical care but couldn't communicate effectively with her doctors. This personal experience inspired Maria to build a company dedicated to providing accessible, high-quality interpretation services.
+                  Our founder, Ricardo Valdivia, experienced firsthand the challenges of language barriers when his grandmother needed medical care but couldn&apos;t communicate effectively with her doctors. This personal experience inspired Ricardo to build a company dedicated to providing accessible, high-quality interpretation services.
                 </p>
                 <p className="text-lg text-gray-700">
                   Today, E-Voque connects thousands of clients with interpreters in over 100 languages, facilitating clear communication in healthcare settings, legal environments, business meetings, and more.
@@ -122,10 +122,10 @@ async function AboutUsContent({ locale, dictionary }: AboutUsContentProps) {
                   <UserGroupIcon className="h-20 w-20 text-gray-400" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Maria Rodriguez</h3>
-                  <p className="text-primary-600 mb-4">Founder & CEO</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">Ricardo Valdivia</h3>
+                  <p className="text-primary-600 mb-4">CEO</p>
                   <p className="text-gray-600">
-                    With over 15 years of experience in language services, Maria leads our company with passion and vision.
+                    With over 15 years of experience in language services, Ricardo leads our company with passion and vision.
                   </p>
                 </div>
               </div>
