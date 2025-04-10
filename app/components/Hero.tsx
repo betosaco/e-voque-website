@@ -129,69 +129,69 @@ export default function Hero({ dictionary, locale }: HeroProps) {
   };
 
   return (
-    <section className="pt-44 pb-16 sm:pt-46 md:pt-48 lg:pt-52 md:pb-24 overflow-hidden">
+    <section className="pt-32 pb-10 sm:pt-36 md:pt-44 lg:pt-52 sm:pb-16 md:pb-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="order-2 md:order-1"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               {dictionary.hero.title}
             </h1>
-            <p className="mt-6 text-xl text-gray-600">
+            <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-600">
               {dictionary.hero.subtitle}
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4">
               <Link
                 href={`/${locale}/contact`}
-                className="btn-primary text-lg px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-md transition-colors"
+                className="btn-primary text-base sm:text-lg px-5 sm:px-6 py-2.5 sm:py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-md transition-colors"
               >
                 {dictionary.hero.cta}
               </Link>
               <Link
                 href={`/${locale}/services`}
-                className="btn-secondary text-lg px-6 py-3 bg-white border border-primary-500 text-primary-500 hover:bg-primary-50 font-medium rounded-md transition-colors"
+                className="btn-secondary text-base sm:text-lg px-5 sm:px-6 py-2.5 sm:py-3 bg-white border border-primary-500 text-primary-500 hover:bg-primary-50 font-medium rounded-md transition-colors"
               >
                 {dictionary.hero.learnMore || "Learn More"}
               </Link>
             </div>
             
             {/* Feature Badges */}
-            <div className="mt-10 grid grid-cols-2 gap-4">
-              <div className="bg-primary-50 p-3 rounded-lg flex items-center">
-                <div className="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center mr-3">
-                  <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div className="mt-6 sm:mt-10 grid grid-cols-2 gap-2 sm:gap-4">
+              <div className="bg-primary-50 p-2 sm:p-3 rounded-lg flex items-center">
+                <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary-100 flex items-center justify-center mr-2 sm:mr-3">
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                 </div>
-                <span className="text-sm font-medium">Instant Connection</span>
+                <span className="text-xs sm:text-sm font-medium">Instant Connection</span>
               </div>
-              <div className="bg-primary-50 p-3 rounded-lg flex items-center">
-                <div className="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center mr-3">
-                  <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="bg-primary-50 p-2 sm:p-3 rounded-lg flex items-center">
+                <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary-100 flex items-center justify-center mr-2 sm:mr-3">
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                   </svg>
                 </div>
-                <span className="text-sm font-medium">24/7 Support</span>
+                <span className="text-xs sm:text-sm font-medium">24/7 Support</span>
               </div>
-              <div className="bg-primary-50 p-3 rounded-lg flex items-center">
-                <div className="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center mr-3">
-                  <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="bg-primary-50 p-2 sm:p-3 rounded-lg flex items-center">
+                <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary-100 flex items-center justify-center mr-2 sm:mr-3">
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
                   </svg>
                 </div>
-                <span className="text-sm font-medium">100+ Languages</span>
+                <span className="text-xs sm:text-sm font-medium">100+ Languages</span>
               </div>
-              <div className="bg-primary-50 p-3 rounded-lg flex items-center">
-                <div className="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center mr-3">
-                  <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="bg-primary-50 p-2 sm:p-3 rounded-lg flex items-center">
+                <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-primary-100 flex items-center justify-center mr-2 sm:mr-3">
+                  <svg className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                   </svg>
                 </div>
-                <span className="text-sm font-medium">Secure & Confidential</span>
+                <span className="text-xs sm:text-sm font-medium">Secure & Confidential</span>
               </div>
             </div>
           </motion.div>
@@ -200,7 +200,7 @@ export default function Hero({ dictionary, locale }: HeroProps) {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative order-1 md:order-2 mb-8 md:mb-0"
+            className="relative order-1 md:order-2 mb-6 md:mb-0"
           >
             {/* Enhanced Image Carousel - SIMPLIFIED IMPLEMENTATION */}
             <div className="aspect-w-4 aspect-h-3 bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg shadow-xl overflow-hidden">

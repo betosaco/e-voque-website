@@ -120,20 +120,20 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white shadow-md py-2'
-          : 'bg-transparent py-4'
+          ? 'bg-white shadow-md py-1 sm:py-2'
+          : 'bg-transparent py-2 sm:py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         {/* Main navigation row */}
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center">
-            <span className="text-2xl font-bold text-primary-500">E-Voque</span>
+            <span className="text-xl sm:text-2xl font-bold text-primary-500">E-Voque</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <NavLink pagePath={`/${locale}`}>
               {dictionary.nav.home}
             </NavLink>
@@ -169,7 +169,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
             <LanguageSwitcher />
             <button
               onClick={toggleMenu}
-              className="ml-4 text-gray-700 hover:text-primary-500 focus:outline-none"
+              className="ml-3 text-gray-700 hover:text-primary-500 focus:outline-none p-1"
               aria-label="Toggle menu"
             >
               {isOpen ? (
@@ -183,14 +183,14 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
       </div>
       
       {/* Second row with Apply Now button - full width */}
-      <div className="w-full mt-4 py-4 bg-primary-500 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
-        <div className="text-white text-xl font-semibold">{dictionary.nav.startWorking || "Start working with us now!"}</div>
+      <div className="w-full mt-2 sm:mt-4 py-3 sm:py-4 bg-primary-500 flex flex-col md:flex-row items-center justify-center space-y-1 md:space-y-0 md:space-x-4">
+        <div className="text-white text-base sm:text-xl font-semibold px-2 text-center">{dictionary.nav.startWorking || "Start working with us now!"}</div>
         <Link
           href={`/${locale}/apply`}
-          className="bg-white hover:bg-gray-100 text-primary-500 font-bold px-8 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-300 text-base"
+          className="bg-white hover:bg-gray-100 text-primary-500 font-bold px-6 sm:px-8 py-2 sm:py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-300 text-sm sm:text-base"
         >
           {applyNowText}
-          <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg className="inline-block ml-2 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </Link>
@@ -205,10 +205,10 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white shadow-lg"
           >
-            <div className="px-4 py-2 space-y-1">
+            <div className="px-3 py-3 space-y-2">
               <Link
                 href={`/${locale}`}
-                className={`block px-3 py-2 rounded-md ${
+                className={`block px-4 py-3 rounded-md ${
                   isActive(`/${locale}`) 
                     ? 'bg-primary-50 text-primary-500 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
@@ -219,7 +219,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
               </Link>
               <Link
                 href={`/${locale}/about`}
-                className={`block px-3 py-2 rounded-md ${
+                className={`block px-4 py-3 rounded-md ${
                   isActive(`/${locale}/about`) 
                     ? 'bg-primary-50 text-primary-500 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
@@ -230,7 +230,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
               </Link>
               <Link
                 href={`/${locale}/services`}
-                className={`block px-3 py-2 rounded-md ${
+                className={`block px-4 py-3 rounded-md ${
                   isActive(`/${locale}/services`) 
                     ? 'bg-primary-50 text-primary-500 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
@@ -241,7 +241,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
               </Link>
               <Link
                 href={`/${locale}/benefits`}
-                className={`block px-3 py-2 rounded-md ${
+                className={`block px-4 py-3 rounded-md ${
                   isActive(`/${locale}/benefits`) 
                     ? 'bg-primary-50 text-primary-500 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
@@ -252,7 +252,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
               </Link>
               <Link
                 href={`/${locale}/contact`}
-                className={`block px-3 py-2 rounded-md ${
+                className={`block px-4 py-3 rounded-md ${
                   isActive(`/${locale}/contact`) 
                     ? 'bg-primary-50 text-primary-500 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
@@ -263,7 +263,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
               </Link>
               <Link
                 href={`/${locale}/apply`}
-                className="block px-3 py-2 bg-primary-500 hover:bg-primary-600 text-white font-bold rounded-lg w-full text-center mt-4"
+                className="block px-4 py-3 mt-4 bg-primary-500 hover:bg-primary-600 text-white font-bold rounded-lg w-full text-center"
                 onClick={() => setIsOpen(false)}
               >
                 {applyNowText}
