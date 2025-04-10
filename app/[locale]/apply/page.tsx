@@ -501,9 +501,6 @@ function ApplyContent({ locale, dictionary }: ApplyContentProps) {
               <a href={`/${locale}/requirements`} className="bg-white text-primary-500 hover:bg-gray-100 font-medium py-3 px-8 rounded-md transition-colors">
                 Learn About Requirements
               </a>
-              <button className="bg-secondary-500 hover:bg-secondary-600 border border-white text-white font-medium py-3 px-8 rounded-md transition-colors">
-                Contact Us
-              </button>
             </div>
           </div>
         </div>
