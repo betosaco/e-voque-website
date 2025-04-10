@@ -238,14 +238,14 @@ function RequirementsContent({ locale, dictionary }: RequirementsContentProps) {
           </div>
           
           {/* CTA Section */}
-          <div className="bg-primary-600 text-white p-10 rounded-xl text-center">
+          <div className="bg-primary-500 text-white p-10 rounded-xl text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Apply?</h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
               If you meet our requirements and are passionate about connecting people across languages, we want to hear from you!
             </p>
             <a 
               href={`/${locale}/apply`} 
-              className="inline-block bg-white text-primary-600 hover:bg-primary-50 font-medium py-3 px-8 rounded-md transition-colors"
+              className="inline-block bg-white text-primary-500 hover:bg-gray-100 font-medium py-3 px-8 rounded-md transition-colors"
             >
               Apply Now
             </a>

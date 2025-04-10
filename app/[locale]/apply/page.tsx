@@ -385,13 +385,13 @@ function ApplyContent({ locale, dictionary }: ApplyContentProps) {
                 <div>
                   <button
                     type="submit"
-                    className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-4 rounded-md transition-colors mb-3"
+                    className="w-full bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-4 rounded-md transition-colors mb-3"
                   >
                     Submit Application
                   </button>
                   <a 
                     href={`/${locale}/requirements`}
-                    className="w-full block text-center bg-white border border-primary-600 text-primary-600 hover:bg-primary-50 font-medium py-3 px-4 rounded-md transition-colors"
+                    className="w-full block text-center bg-white border border-primary-500 text-primary-500 hover:bg-primary-50 font-medium py-3 px-4 rounded-md transition-colors"
                   >
                     Learn About Requirements
                   </a>
@@ -498,10 +498,10 @@ function ApplyContent({ locale, dictionary }: ApplyContentProps) {
               Submit your application today and join our network of professional interpreters making a difference around the world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={`/${locale}/requirements`} className="bg-white text-primary-600 hover:bg-primary-50 font-medium py-3 px-8 rounded-md transition-colors">
+              <a href={`/${locale}/requirements`} className="bg-white text-primary-500 hover:bg-gray-100 font-medium py-3 px-8 rounded-md transition-colors">
                 Learn About Requirements
               </a>
-              <button className="bg-primary-700 border border-white hover:bg-primary-800 text-white font-medium py-3 px-8 rounded-md transition-colors">
+              <button className="bg-secondary-500 hover:bg-secondary-600 border border-white text-white font-medium py-3 px-8 rounded-md transition-colors">
                 Contact Us
               </button>
             </div>

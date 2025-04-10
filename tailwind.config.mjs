@@ -1,25 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
         primary: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
+          50: '#E6F7F7',
+          100: '#C1E9EA',
+          200: '#9DDADC',
+          300: '#72CBCE',
+          400: '#4DBCC0',
+          500: '#35A8AC', // Main brand color from e-voque.com
+          600: '#2C8B8F',
+          700: '#236D71',
+          800: '#1A5053',
+          900: '#103436',
         },
+        secondary: {
+          50: '#EEE8F8',
+          100: '#D4CAFE',
+          200: '#BA9CE4',
+          300: '#A17CCA',
+          400: '#865CB0',
+          500: '#6C4796', // Secondary brand color from e-voque.com
+          600: '#593B7A',
+          700: '#462F5E',
+          800: '#342342',
+          900: '#221726',
+        }
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

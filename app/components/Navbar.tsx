@@ -99,14 +99,14 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
         href={href}
         className={`font-medium transition-colors ${
           active 
-            ? 'text-primary-600 font-bold'
-            : 'text-gray-700 hover:text-primary-600'
+            ? 'text-primary-500 font-bold'
+            : 'text-gray-700 hover:text-primary-500'
         }`}
         onClick={onClick}
       >
         {children}
         {active && (
-          <div className="h-0.5 bg-primary-600 mt-1 rounded-full" />
+          <div className="h-0.5 bg-primary-500 mt-1 rounded-full" />
         )}
       </Link>
     );
@@ -128,7 +128,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center">
-            <span className="text-2xl font-bold text-primary-600">E-Voque</span>
+            <span className="text-2xl font-bold text-primary-500">E-Voque</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -168,7 +168,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
             <LanguageSwitcher />
             <button
               onClick={toggleMenu}
-              className="ml-4 text-gray-700 hover:text-primary-600 focus:outline-none"
+              className="ml-4 text-gray-700 hover:text-primary-500 focus:outline-none"
               aria-label="Toggle menu"
             >
               {isOpen ? (
@@ -182,11 +182,11 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
       </div>
       
       {/* Second row with Apply Now button - full width */}
-      <div className="w-full mt-4 py-4 bg-gradient-to-r from-purple-600 to-indigo-800 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
+      <div className="w-full mt-4 py-4 bg-primary-500 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
         <div className="text-white text-xl font-semibold">Start working with us now!</div>
         <Link
           href={`/${locale}/apply`}
-          className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300 text-base"
+          className="bg-white hover:bg-gray-100 text-primary-500 font-bold px-8 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-300 text-base"
         >
           {applyNowText}
           <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -209,7 +209,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 href={`/${locale}`}
                 className={`block px-3 py-2 rounded-md ${
                   isActive(`/${locale}`) 
-                    ? 'bg-primary-50 text-primary-600 font-medium'
+                    ? 'bg-primary-50 text-primary-500 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -220,7 +220,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 href={`/${locale}/about`}
                 className={`block px-3 py-2 rounded-md ${
                   isActive(`/${locale}/about`) 
-                    ? 'bg-primary-50 text-primary-600 font-medium'
+                    ? 'bg-primary-50 text-primary-500 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -231,7 +231,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 href={`/${locale}/services`}
                 className={`block px-3 py-2 rounded-md ${
                   isActive(`/${locale}/services`) 
-                    ? 'bg-primary-50 text-primary-600 font-medium'
+                    ? 'bg-primary-50 text-primary-500 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -242,7 +242,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 href={`/${locale}/benefits`}
                 className={`block px-3 py-2 rounded-md ${
                   isActive(`/${locale}/benefits`) 
-                    ? 'bg-primary-50 text-primary-600 font-medium'
+                    ? 'bg-primary-50 text-primary-500 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -253,7 +253,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
                 href={`/${locale}/contact`}
                 className={`block px-3 py-2 rounded-md ${
                   isActive(`/${locale}/contact`) 
-                    ? 'bg-primary-50 text-primary-600 font-medium'
+                    ? 'bg-primary-50 text-primary-500 font-medium'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -262,7 +262,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
               </Link>
               <Link
                 href={`/${locale}/apply`}
-                className="block px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg w-full text-center mt-4"
+                className="block px-3 py-2 bg-primary-500 hover:bg-primary-600 text-white font-bold rounded-lg w-full text-center mt-4"
                 onClick={() => setIsOpen(false)}
               >
                 {applyNowText}

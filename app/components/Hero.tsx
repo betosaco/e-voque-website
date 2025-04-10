@@ -147,13 +147,13 @@ export default function Hero({ dictionary, locale }: HeroProps) {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href={`/${locale}/contact`}
-                className="btn-primary text-lg px-6 py-3"
+                className="btn-primary text-lg px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded-md transition-colors"
               >
                 {dictionary.hero.cta}
               </Link>
               <Link
                 href={`/${locale}/services`}
-                className="btn-secondary text-lg px-6 py-3"
+                className="btn-secondary text-lg px-6 py-3 bg-white border border-primary-500 text-primary-500 hover:bg-primary-50 font-medium rounded-md transition-colors"
               >
                 {dictionary.hero.learnMore || "Learn More"}
               </Link>

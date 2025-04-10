@@ -42,7 +42,7 @@ export default function Footer({ dictionary, locale }: FooterProps) {
           {/* Logo and description */}
           <div className="col-span-1 md:col-span-1">
             <Link href={`/${locale}`} className="flex items-center">
-              <span className="text-2xl font-bold text-white">E-Voque</span>
+              <span className="text-2xl font-bold text-primary-400">E-Voque</span>
             </Link>
             <p className="mt-4 text-gray-400">
               Breaking language barriers through high-quality over-the-phone interpretation.
@@ -54,7 +54,7 @@ export default function Footer({ dictionary, locale }: FooterProps) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-primary-300 transition-colors"
                 >
                   <span className="text-xl">{link.icon}</span>
                 </a>
@@ -64,25 +64,25 @@ export default function Footer({ dictionary, locale }: FooterProps) {
 
           {/* Navigation Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Navigation</h3>
+            <h3 className="text-lg font-semibold mb-4 text-primary-300">Navigation</h3>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${locale}`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${locale}`} className="text-gray-400 hover:text-primary-300 transition-colors">
                   {dictionary.nav.home}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}#about`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${locale}#about`} className="text-gray-400 hover:text-primary-300 transition-colors">
                   {dictionary.nav.about}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}#services`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${locale}#services`} className="text-gray-400 hover:text-primary-300 transition-colors">
                   {dictionary.nav.services}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}#contact`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${locale}#contact`} className="text-gray-400 hover:text-primary-300 transition-colors">
                   {dictionary.nav.contact}
                 </Link>
               </li>
@@ -91,25 +91,25 @@ export default function Footer({ dictionary, locale }: FooterProps) {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Services</h3>
+            <h3 className="text-lg font-semibold mb-4 text-primary-300">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${locale}#services`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${locale}#services`} className="text-gray-400 hover:text-primary-300 transition-colors">
                   Medical Interpretation
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}#services`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${locale}#services`} className="text-gray-400 hover:text-primary-300 transition-colors">
                   Legal Interpretation
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}#services`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${locale}#services`} className="text-gray-400 hover:text-primary-300 transition-colors">
                   Business Interpretation
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}#services`} className="text-gray-400 hover:text-white transition-colors">
+                <Link href={`/${locale}#services`} className="text-gray-400 hover:text-primary-300 transition-colors">
                   Emergency Services
                 </Link>
               </li>
@@ -118,19 +118,19 @@ export default function Footer({ dictionary, locale }: FooterProps) {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
+            <h3 className="text-lg font-semibold mb-4 text-primary-300">Contact</h3>
             <ul className="space-y-2">
               <li className="text-gray-400">
                 123 Interpretation St<br />
                 San Francisco, CA 94105
               </li>
               <li className="text-gray-400">
-                <a href="tel:+15551234567" className="hover:text-white transition-colors">
+                <a href="tel:+15551234567" className="hover:text-primary-300 transition-colors">
                   +1 (555) 123-4567
                 </a>
               </li>
               <li className="text-gray-400">
-                <a href="mailto:info@e-voque.com" className="hover:text-white transition-colors">
+                <a href="mailto:info@e-voque.com" className="hover:text-primary-300 transition-colors">
                   info@e-voque.com
                 </a>
               </li>
@@ -145,10 +145,10 @@ export default function Footer({ dictionary, locale }: FooterProps) {
               &copy; {currentYear} E-Voque. {dictionary.footer.rights}.
             </div>
             <div className="flex space-x-6">
-              <Link href={`/${locale}/privacy`} className="hover:text-white transition-colors">
+              <Link href={`/${locale}/privacy`} className="hover:text-primary-300 transition-colors">
                 {dictionary.footer.privacy}
               </Link>
-              <Link href={`/${locale}/terms`} className="hover:text-white transition-colors">
+              <Link href={`/${locale}/terms`} className="hover:text-primary-300 transition-colors">
                 {dictionary.footer.terms}
               </Link>
             </div>
