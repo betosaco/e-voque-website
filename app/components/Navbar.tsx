@@ -15,6 +15,7 @@ interface NavbarProps {
       services: string;
       wellness: string;
       contact: string;
+      startWorking?: string;
     };
     hero?: {
       applyNow?: string;
@@ -183,7 +184,7 @@ export default function Navbar({ dictionary, locale }: NavbarProps) {
       
       {/* Second row with Apply Now button - full width */}
       <div className="w-full mt-4 py-4 bg-primary-500 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
-        <div className="text-white text-xl font-semibold">Start working with us now!</div>
+        <div className="text-white text-xl font-semibold">{dictionary.nav.startWorking || "Start working with us now!"}</div>
         <Link
           href={`/${locale}/apply`}
           className="bg-white hover:bg-gray-100 text-primary-500 font-bold px-8 py-3 rounded-lg shadow-lg transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-300 text-base"
