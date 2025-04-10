@@ -92,14 +92,9 @@ export default function Hero({ dictionary, locale }: HeroProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary-600/60 to-secondary-600/60"></div>
                 
-                {/* Content overlay with tagline */}
-                <div className="relative z-10 text-center px-6">
-                  <h3 className="text-2xl md:text-3xl font-semibold text-white drop-shadow-lg">
-                    Elevate Global Communication
-                  </h3>
-                  <p className="text-white/90 mt-2 max-w-md mx-auto drop-shadow-lg">
-                    Premium Interpretation Services That Connect Worlds
-                  </p>
+                {/* Clean overlay without text or logo */}
+                <div className="relative z-10">
+                  {/* Empty for clean design */}
                 </div>
               </div>
             </div>
