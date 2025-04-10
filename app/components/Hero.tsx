@@ -42,7 +42,7 @@ export default function Hero({ dictionary, locale }: HeroProps) {
     {
       title: dictionary.hero.carousel?.image1?.title || "Professional Interpretation",
       description: dictionary.hero.carousel?.image1?.description || "Connect with certified interpreters in over 100 languages",
-      image: "",  // Placeholder for future image
+      image: "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?q=80&w=3840&auto=format&fit=crop",
       color: "from-primary-600/80 to-indigo-700/80",
       placeholderText: "Professional interpreters in action during a multilingual conference",
       icon: (
@@ -54,7 +54,7 @@ export default function Hero({ dictionary, locale }: HeroProps) {
     {
       title: dictionary.hero.carousel?.image2?.title || "Medical Interpretation",
       description: dictionary.hero.carousel?.image2?.description || "Specialized interpreters for healthcare settings",
-      image: "",  // Placeholder for future image
+      image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=3880&auto=format&fit=crop",
       color: "from-blue-600/80 to-blue-800/80",
       placeholderText: "Doctor and patient communicating through an interpreter in a hospital setting",
       icon: (
@@ -66,7 +66,7 @@ export default function Hero({ dictionary, locale }: HeroProps) {
     {
       title: dictionary.hero.carousel?.image3?.title || "Legal Interpretation",
       description: dictionary.hero.carousel?.image3?.description || "Accurate interpretation for legal proceedings",
-      image: "",  // Placeholder for future image
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=3840&auto=format&fit=crop",
       color: "from-indigo-600/80 to-purple-700/80",
       placeholderText: "Courtroom setting with interpreter assisting during legal proceedings",
       icon: (
@@ -244,8 +244,16 @@ export default function Hero({ dictionary, locale }: HeroProps) {
                           opacity: { duration: 0.5 }
                         }}
                       >
-                        {/* Background gradient */}
-                        <div className={`absolute inset-0 bg-gradient-to-tr ${image.color}`}></div>
+                        {/* Background gradient with optional image overlay */}
+                        <div className={`absolute inset-0 bg-gradient-to-tr ${image.color}`}>
+                          {image.image && (
+                            <img 
+                              src={image.image} 
+                              alt={image.title}
+                              className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-70"
+                            />
+                          )}
+                        </div>
                         
                         {/* Icon */}
                         <div className="absolute inset-0 flex items-center justify-center">
@@ -254,7 +262,7 @@ export default function Hero({ dictionary, locale }: HeroProps) {
                           </div>
                         </div>
                         
-                        {/* Placeholder text */}
+                        {/* Placeholder text - now only shown if no image is available */}
                         {!image.image && image.placeholderText && (
                           <div className="absolute inset-0 flex items-center justify-center">
                             <div className="font-mono text-white/90 text-sm md:text-base text-center border-4 border-dashed border-white/60 p-6 rounded-lg bg-black/30 backdrop-blur-sm max-w-[85%] shadow-lg">
@@ -335,15 +343,15 @@ export default function Hero({ dictionary, locale }: HeroProps) {
               </div>
             </div>
             
-            {/* Placeholder indicator - note for developers */}
-            <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-md text-sm text-yellow-700">
+            {/* Placeholder indicator - note for developers - removing since we now have images */}
+            <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-md text-sm text-green-700">
               <div className="flex items-start">
-                <svg className="w-5 h-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <svg className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                  <p className="font-medium">3 Image Placeholders</p>
-                  <p className="mt-1">This carousel contains 3 placeholder images rotating every 5 seconds. Replace with high-quality professional photography before deployment.</p>
+                  <p className="font-medium">Image Carousel Active</p>
+                  <p className="mt-1">Carousel with 3 rotating images loaded. Images rotate every 5 seconds or can be navigated manually.</p>
                 </div>
               </div>
             </div>

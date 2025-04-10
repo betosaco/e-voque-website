@@ -1,22 +1,21 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About Us",
+    "about": "About",
     "services": "Services",
-    "wellness": "Benefits",
-    "contact": "Contact",
-    "startWorking": "Start working with us now!"
+    "wellness": "Wellness",
+    "contact": "Contact"
   },
   "hero": {
-    "title": "Professional Interpretation Services",
-    "subtitle": "Breaking language barriers through high-quality over-the-phone interpretation",
+    "title": "Breaking Language Barriers",
+    "subtitle": "Professional interpretation services for medical, legal, and business needs",
     "cta": "Get Started",
     "applyNow": "Apply Now",
     "learnMore": "Learn More",
     "carousel": {
       "image1": {
         "title": "Professional Interpretation",
-        "description": "Connect with certified interpreters in over 100 languages"
+        "description": "Connect with certified interpreters in over a hundred languages"
       },
       "image2": {
         "title": "Medical Interpretation",
@@ -29,37 +28,37 @@
     }
   },
   "about": {
-    "title": "About E-Voque",
-    "description": "E-Voque is a leading provider of over-the-phone interpretation services. We connect businesses and individuals with professional interpreters in seconds, ensuring clear communication across language barriers.",
-    "mission": "Our mission is to facilitate seamless communication regardless of language differences, providing accurate and culturally sensitive interpretation services."
+    "title": "About Us",
+    "description": "E-Voque is a leading provider of professional interpretation services, connecting clients with certified interpreters in over 100 languages.",
+    "mission": "Our mission is to break down language barriers and facilitate clear communication across cultures and languages."
   },
   "services": {
     "title": "Our Services",
     "medical": {
       "title": "Medical Interpretation",
-      "description": "Professional medical interpretation for healthcare providers, ensuring accurate communication between medical staff and patients."
+      "description": "Specialized interpreters for healthcare settings, ensuring accurate communication between patients and providers."
     },
     "legal": {
       "title": "Legal Interpretation",
-      "description": "Precise legal interpretation services for law firms, courts, and legal consultations."
+      "description": "Certified interpreters for court proceedings, depositions, and legal consultations."
     },
     "business": {
       "title": "Business Interpretation",
-      "description": "Support for international business meetings, negotiations, and customer service interactions."
+      "description": "Professional interpretation for meetings, conferences, and international business negotiations."
     },
     "emergency": {
       "title": "Emergency Services",
-      "description": "24/7 interpretation support for emergency situations and crisis management."
+      "description": "24/7 on-demand interpretation for urgent situations and emergencies."
     }
   },
   "benefits": {
-    "title": "Why Choose E-Voque",
-    "quality": "High-quality interpretation",
-    "speed": "Connect in seconds",
-    "availability": "Available 24/7",
-    "languages": "Over 100 languages",
-    "security": "Secure and confidential",
-    "technology": "Advanced technology"
+    "title": "Why Choose Us",
+    "quality": "Certified Interpreters",
+    "speed": "Fast Connection",
+    "availability": "24/7 Availability",
+    "languages": "100+ Languages",
+    "security": "Secure & Confidential",
+    "technology": "Advanced Technology"
   },
   "contact": {
     "title": "Contact Us",
@@ -77,7 +76,73 @@
   "footer": {
     "rights": "All rights reserved",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "terms": "Terms of Service",
+    "startWorking": "Start Working With Us Today!"
+  },
+  "employeeBenefits": {
+    "pageTitle": "Employee Benefits Solutions",
+    "pageSubtitle": "Strategic benefits management for modern businesses",
+    "overviewTitle": "Comprehensive Employee Benefits Solutions",
+    "overviewDescription": "We provide tailored benefit solutions designed to attract and retain top talent while managing costs effectively.",
+    "exploreButton": "Explore Our Solutions",
+    "strategicTitle": "Strategic Benefits Management",
+    "strategicDescription1": "In today's competitive marketplace, a comprehensive benefits package is essential for attracting and retaining top talent. E-Voque offers customized employee benefits solutions designed to meet the unique needs of your organization and workforce.",
+    "strategicDescription2": "Our team of benefits experts works closely with you to design, implement, and manage benefit programs that enhance employee satisfaction while controlling costs.",
+    "employeesCovered": "Employees Covered",
+    "corporateClients": "Corporate Clients",
+    "benefitsManagement": "Years of Benefits Management",
+    "tailoredSolutions": "Tailored Solutions",
+    "solutionsTitle": "Our Benefits Solutions",
+    "keyFeatures": "Key Features",
+    "learnMore": "Learn More",
+    "ctaTitle": "Ready to Transform Your Benefits Strategy?",
+    "ctaDescription": "Partner with E-Voque to create a comprehensive benefits program that attracts and retains top talent while managing costs effectively.",
+    "requestConsultation": "Request a Consultation",
+    "viewPricing": "View Pricing Options",
+    "health": {
+      "title": "Health & Insurance",
+      "description": "Comprehensive health coverage options that protect your employees while controlling costs.",
+      "features": [
+        "Medical, dental, and vision plans",
+        "Prescription drug coverage",
+        "Health savings accounts (HSAs)",
+        "Flexible spending accounts (FSAs)",
+        "Supplemental insurance options"
+      ]
+    },
+    "retirement": {
+      "title": "Retirement & Financial",
+      "description": "Retirement and financial wellness solutions to help your employees prepare for the future.",
+      "features": [
+        "401(k) and retirement planning",
+        "Financial wellness programs",
+        "Student loan assistance",
+        "Retirement education",
+        "Investment advisory services"
+      ]
+    },
+    "professional": {
+      "title": "Professional Development",
+      "description": "Development and education benefits that help your employees grow professionally.",
+      "features": [
+        "Tuition reimbursement",
+        "Professional certification",
+        "Learning and development",
+        "Mentorship programs",
+        "Career advancement opportunities"
+      ]
+    },
+    "wellness": {
+      "title": "Wellness Programs",
+      "description": "Comprehensive wellness initiatives that promote employee health and productivity.",
+      "features": [
+        "Physical wellness programs",
+        "Mental health resources",
+        "Work-life balance initiatives",
+        "Employee assistance programs",
+        "Stress management resources"
+      ]
+    }
   },
   "requirements": {
     "pageTitle": "Interpreter Requirements",
@@ -278,23 +343,23 @@
     "additionalInfo": "Additional Information",
     "additionalPlaceholder": "Tell us a bit more about yourself and why you'd like to join our team...",
     "submitButton": "Submit Application",
-    "termsAgreement": "By submitting this form, you agree to our terms and privacy policy.",
+    "termsAgreement": "By submitting this application, I agree to the privacy policy and terms of service.",
     "testimonials": {
       "title": "What Our Interpreters Say",
       "testimonial1": {
-        "name": "Juan Sanchez",
-        "role": "Spanish Interpreter",
-        "quote": "Working with E-Voque has been a game-changer for my career. The flexible scheduling allows me to maintain work-life balance while earning a great income."
+        "name": "Maria Johnson",
+        "role": "Medical Interpreter",
+        "quote": "Working with E-Voque has been transformative for my career. The flexibility allows me to maintain work-life balance while the continuous training keeps me at the top of my field."
       },
       "testimonial2": {
-        "name": "Mei Wang",
-        "role": "Mandarin Translator",
-        "quote": "The professional development opportunities at E-Voque have helped me specialize in medical translation and significantly grow my skills and client base."
+        "name": "David Chang",
+        "role": "Legal Interpreter",
+        "quote": "The technology platform is intuitive and reliable, and the support team is always there when I need them. I've been able to grow my skills and income significantly."
       },
       "testimonial3": {
-        "name": "Ahmed Khalid",
-        "role": "Arabic Interpreter",
-        "quote": "I appreciate the transparent pay structure and on-time payments. The remote office option in Miraflores is perfect when I need a professional setting for client meetings."
+        "name": "Sofia Martinez",
+        "role": "Business Interpreter",
+        "quote": "E-Voque truly values their interpreters. The compensation is excellent, and I appreciate the community of professionals they've built. It's been the best career move for me."
       }
     },
     "faq": {

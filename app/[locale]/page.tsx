@@ -55,7 +55,6 @@ async function PageContent({ locale, dictionary }: PageContentProps) {
   const AboutUs = (await import('../components/AboutUs')).default;
   const Services = (await import('../components/Services')).default;
   const Benefits = (await import('../components/Benefits')).default;
-  const Contact = (await import('../components/Contact')).default;
   const Footer = (await import('../components/Footer')).default;
   
   return (
@@ -70,9 +69,6 @@ async function PageContent({ locale, dictionary }: PageContentProps) {
       </section>
       <section id="benefits">
         <Benefits dictionary={dictionary} />
-      </section>
-      <section id="contact">
-        <Contact dictionary={dictionary} />
       </section>
       <Footer dictionary={dictionary} locale={locale} />
     </main>
